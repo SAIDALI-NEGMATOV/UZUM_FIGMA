@@ -1,7 +1,15 @@
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Product = ({ Content }) => {
+  let navigate = useNavigate();
+
+  let itemProduct = (item,index) => {
+    localStorage.setItem("ProductName",...Content)
+    navigate("/components/" + item.Id)
+    console.log(item);
+  }
   return (
     <Box
       display={"flex"}
@@ -41,11 +49,11 @@ export const Product = ({ Content }) => {
                 position={"relative"}
               >
                 <img
-                  src={item.Oill}
+                  src={item.defImg}
                   alt=""
                   style={{ width: "100%", height: "100%" }}
                 />
-                <Box position={"absolute"} top={"15px"} left={"190px"}>
+                <Box position={"absolute"} top={"15px"} left={"210px"}>
                   <Typography variant="i" fontSize={"20px"} fontWeight={"200"}>
                     <i class="bx bx-heart"></i>
                   </Typography>
@@ -125,6 +133,7 @@ export const Product = ({ Content }) => {
                     {item.NewPrise}
                   </Typography>
                   <Button
+                  onClick={()=>itemProduct(item,index,Content)}
                     sx={{
                       mb: "10px",
                       position: "absolute",
