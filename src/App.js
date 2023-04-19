@@ -109,7 +109,7 @@ function App() {
           path="/components/:contentId"
           element={<ItemProduct Content={Content} />}
         />
-        <Route path="/basket" element={<Basket/>}/>
+        <Route path="/basket" element={<Basket Content={Content}/>}/>
       </Routes>
     </Box>
   );

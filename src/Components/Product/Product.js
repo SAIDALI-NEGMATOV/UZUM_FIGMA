@@ -1,15 +1,47 @@
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// import { ItemProduct } from "../ItemProduct";
 
 export const Product = ({ Content }) => {
   let navigate = useNavigate();
 
-  let itemProduct = (item,index) => {
-    localStorage.setItem("ProductName",...Content)
-    navigate("/components/" + item.Id)
+  let itemProduct = (item) => {
+    navigate("/components/" + item.Id);
     console.log(item);
-  }
+  };
+
+  let itemLocal = (item) => {
+    localStorage.setItem("ProductId",item.Id)
+    localStorage.setItem(
+      "ProductImage",
+      item.defImg,
+    );
+    localStorage.setItem(
+      "ProductName",
+      item.Name,
+    )
+    localStorage.setItem(
+      "ProductText",
+      item.Text,
+    )
+    localStorage.setItem(
+      "ProductStarT",
+      item.StarT,
+    )
+    localStorage.setItem(
+      "ProductCredit",
+      item.Credit,
+    )
+    localStorage.setItem(
+      "ProductOldPrise",
+      item.OldPrise,
+    )
+    localStorage.setItem(
+      "ProductNewPrise",
+      item.NewPrise
+    )
+  };
   return (
     <Box
       display={"flex"}
@@ -27,9 +59,13 @@ export const Product = ({ Content }) => {
         flexWrap={"wrap"}
         gap={"5px"}
       >
-        <Box width={'100%'} mb={'20px'} position={'relative'} mt='30px'>
-          <Typography variant="h4"  fontWeight={"600"}>
-            Hayitlik <i class='bx bx-chevron-right' style={{position:"absolute",top:"6px"}}></i>
+        <Box width={"100%"} mb={"20px"} position={"relative"} mt="30px">
+          <Typography variant="h4" fontWeight={"600"}>
+            Hayitlik{" "}
+            <i
+              class="bx bx-chevron-right"
+              style={{ position: "absolute", top: "6px" }}
+            ></i>
           </Typography>
         </Box>
         <Box display={"flex"} flexWrap={"wrap"} gap={"10px"}>
@@ -37,16 +73,23 @@ export const Product = ({ Content }) => {
             <Box
               key={index}
               width={"240px"}
+              display={"flex"}
+              justifyContent={"flex-start"}
+              alignItems={"flex-start"}
               flexDirection={"column"}
               bgcolor={"#fff"}
               overflow={"hidden"}
             >
-              <Box
-                width={"240px"}
-                height={"320px"}
-                overflow={"hidden"}
-                borderRadius={"10px"}
-                position={"relative"}
+              <Button
+                onClick={() => itemProduct(item)}
+                sx={{
+                  width: "250px",
+                  height: "320px",
+                  overflow: "hidden",
+                  borderRadius: "10px",
+                  position: "relative",
+                  padding: "0px",
+                }}
               >
                 <img
                   src={item.defImg}
@@ -66,7 +109,7 @@ export const Product = ({ Content }) => {
                     Aksiya
                   </Button>
                 </Box>
-              </Box>
+              </Button>
               <Box
                 flexWrap={"wrap"}
                 textOverflow={"hidden"}
@@ -133,12 +176,12 @@ export const Product = ({ Content }) => {
                     {item.NewPrise}
                   </Typography>
                   <Button
-                  onClick={()=>itemProduct(item,index,Content)}
+                    onClick={() => itemLocal(item, index, Content)}
                     sx={{
                       mb: "10px",
                       position: "absolute",
                       top: "-5px",
-                      left: "190px",
+                      left: "180px",
                       borderRadius: "50%",
                       color: "#000",
                       padding: "10px 10px",
