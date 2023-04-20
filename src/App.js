@@ -37,7 +37,7 @@ function ProductItems(
 let Content = [
   ProductItems(
     1,
-    "Oil",
+    "Sofia Oil",
     Oill,
     "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
     "5.0 (65 baho)",
