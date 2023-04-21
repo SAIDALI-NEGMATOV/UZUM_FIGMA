@@ -1,16 +1,28 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { useState } from "react";
 
-export const Basket = ({ Content }) => {
-  // let GetInfo = localStorage.getItem(
-  //   "ProductImage",
-  //   "ProductName",
-  //   "ProductStarT",
-  //   "ProductCredit",
-  //   "ProductOldPrise",
-  //   "ProductNewPrise",
-  // );
+
+export const Basket = () => {
+
+  let [counter,setCounter] =useState(0)
+  let [on,setOne]=useState(true)
+
+  const PluseBtn =()=>{
+    counter++
+    setCounter(counter)
+    on=false
+    setOne(on)
+  }
+  const MinuseBtn =()=>{
+    counter--
+    setCounter(counter)
+    if (counter === 0){
+      on=true
+      setOne(on)
+    }
+  }
 
   function GetInfo(Id, Name, defImg, Text, StarT, Credit, OldPrise, NewPrise) {
     return {
@@ -184,7 +196,7 @@ export const Basket = ({ Content }) => {
           //     </Box>
           //   </Box>
           // </Box>
-          <Box>
+          <Box key={index}>
             <Box width={"100%"} marginTop={"40px"} display={"flex"}>
               <Typography variant="h4">Savatingiz,</Typography>
               <Typography variant="h4" sx={{ opacity: ".54" }}>
@@ -195,13 +207,12 @@ export const Basket = ({ Content }) => {
               </Typography>
             </Box>
             <Box display={"flex"}>
-              <Box border={1}>
+              <Box border={'1px solid #C2C2C2'} padding={'20px'} borderRadius={'5px'} >
                 <Box
                   width={"100%"}
                   display={"flex"}
-                  padding="20px"
+                  padding="10px"
                   justifyContent={"space-between"}
-                  gap={"450px"}
                 >
                   <Box mt="8px" display={"flex"}>
                     <input
@@ -212,7 +223,7 @@ export const Basket = ({ Content }) => {
                       Hammasini yechish
                     </Typography>
                   </Box>
-                  <Box>
+                  <Box display={'flex'}>
                     <Typography variant="p">
                       Yetkazib berishning eng yaqin sanasi:
                     </Typography>
@@ -221,8 +232,9 @@ export const Basket = ({ Content }) => {
                     </Button>
                   </Box>
                 </Box>
-                <Box border={1} display={"flex"} padding={"20px"}>
-                  <Box display={"flex"}>
+                <Box borderTop={"1px solid #C2C2C2"}>
+                <Box display={"flex"} padding={"20px"}>
+                  <Box display={"flex"} >
                     <Box
                       display={"flex"}
                       justifyContent={"center"}
@@ -242,33 +254,69 @@ export const Basket = ({ Content }) => {
                       />
                     </Box>
                   </Box>
-                  <Box>
-                    <Box ml={"50px"}>
-                      <Typography variant="h6">{item.Text}</Typography>
-                    </Box>
-                    <Box ml={"50px"} display={"flex"}>
-                      <Box display={'flex'}>
-                        <Box>
-                          <Typography
-                            variant="h6"
-                            sx={{ opacity: ".54", mt: "25px" }}
-                          >
-                            Sotuvchi:
-                          </Typography>
-                        </Box>
-                        <Box display={'flex'}>
-                          <Typography variant="h6" sx={{ mt: "25px" }}>
-                            {item.Name}
-                          </Typography>
-                          <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                          <Button sx={{padding:"0px"}}>-</Button>
-                          <Typography>{11}</Typography>
-                          <Button sx={{padding:"0px"}}>+</Button>
+                  <Box display={"flex"} justifyContent={"space-between"}>
+                    <Box>
+                      <Box ml={"50px"}>
+                        <Typography variant="h6" fontSize={"16px"}>
+                          {item.Text}
+                        </Typography>
+                      </Box>
+                      <Box ml={"50px"} display={"flex"}>
+                        <Box display={"flex"}>
+                          <Box>
+                            <Typography
+                              variant="h6"
+                              sx={{ opacity: ".54", mt: "25px" }}
+                            >
+                              Sotuvchi:
+                            </Typography>
+                          </Box>
+                          <Box display={"flex"}>
+                            <Typography variant="h6" sx={{ mt: "25px" }}>
+                              {item.Name}
+                            </Typography>
+                            <Box
+                              display={"flex"}
+                              padding={0}
+                              width={"100px"}
+                              height={"40px"}
+                              justifyContent={"center"}
+                              alignItems={"center"}
+                              border={"1px solid #c2c2c2"}
+                              overflow={"hidden"}
+                              mt={"20px"}
+                              ml={"180px"}
+                            >
+                              <Button onClick={MinuseBtn} disabled={on} sx={{ padding: "0px 0px" }}>-</Button>
+                              <Typography variant="p">{counter}</Typography>
+                              <Button onClick={PluseBtn}  sx={{ padding: "0px 0px" }}>+</Button>
+                            </Box>
                           </Box>
                         </Box>
                       </Box>
                     </Box>
+                    <Box display={"flex"} flexDirection={"column"} ml="50px" gap={'10px'} width={"120px"} mb='20px'>
+                      <Box >
+                        <Button
+                          sx={{
+                            color: "black",
+                            fontSize: "30px",
+                            opacity: "0.70",
+                          }}
+                        >
+                          <i class="bx bx-trash"></i>
+                          <Typography fontSize={"13px"}>Yo'q qilish</Typography>
+                        </Button>
+                      </Box>
+                      <Box mb='10px'>
+                        <Typography fontSize={'20px'} fontWeight={'600'}> {item.NewPrise}</Typography>
+                      </Box>
+                        <Box borderBottom={1} position={'relative'} padding={'2px'} ml='40px' sx={{opacity:"0.70"}}>
+                        <Typography fontSize={'14px'} position={'absolute'} top={'-5px'} > {item.OldPrise}</Typography>
+                        </Box>
+                    </Box>
                   </Box>
+                </Box>
                 </Box>
               </Box>
               <Box></Box>
