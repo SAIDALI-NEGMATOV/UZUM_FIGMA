@@ -12,36 +12,27 @@ export const Product = ({ Content }) => {
   };
 
   let itemLocal = (item) => {
-    localStorage.setItem("ProductId",item.Id)
-    localStorage.setItem(
-      "ProductImage",
-      item.defImg,
-    );
-    localStorage.setItem(
-      "ProductName",
-      item.Name,
-    )
-    localStorage.setItem(
-      "ProductText",
-      item.Text,
-    )
-    localStorage.setItem(
-      "ProductStarT",
-      item.StarT,
-    )
-    localStorage.setItem(
-      "ProductCredit",
-      item.Credit,
-    )
-    localStorage.setItem(
-      "ProductOldPrise",
-      item.OldPrise,
-    )
-    localStorage.setItem(
-      "ProductNewPrise",
-      item.NewPrise
-    )
+    localStorage.setItem("ProductId", item.Id);
+    localStorage.setItem("ProductImage", item.defImg);
+    localStorage.setItem("ProductName", item.Name);
+    localStorage.setItem("ProductText", item.Text);
+    localStorage.setItem("ProductStarT", item.StarT);
+    localStorage.setItem("ProductCredit", item.Credit);
+    localStorage.setItem("ProductOldPrise", item.OldPrise);
+    localStorage.setItem("ProductNewPrise", item.NewPrise);
   };
+
+  const itemSort = (item) => {
+    localStorage.setItem("SortedId", item.Id);
+    localStorage.setItem("SortedImage", item.defImg);
+    localStorage.setItem("SortedName", item.Name);
+    localStorage.setItem("SortedText", item.Text);
+    localStorage.setItem("SortedStarT", item.StarT);
+    localStorage.setItem("SortedCredit", item.Credit);
+    localStorage.setItem("SortedOldPrise", item.OldPrise);
+    localStorage.setItem("SortedNewPrise", item.NewPrise);
+  };
+
   return (
     <Box
       display={"flex"}
@@ -80,8 +71,7 @@ export const Product = ({ Content }) => {
               bgcolor={"#fff"}
               overflow={"hidden"}
             >
-              <Button
-                onClick={() => itemProduct(item)}
+              <Box
                 sx={{
                   width: "250px",
                   height: "320px",
@@ -92,14 +82,28 @@ export const Product = ({ Content }) => {
                 }}
               >
                 <img
+                  onClick={() => itemProduct(item)}
                   src={item.defImg}
                   alt=""
                   style={{ width: "100%", height: "100%" }}
                 />
-                <Box position={"absolute"} top={"15px"} left={"210px"}>
-                  <Typography variant="i" fontSize={"20px"} fontWeight={"200"}>
+                <Box
+                  position={"absolute"}
+                  top={"10px"}
+                  left={"180px"}
+                  padding={0}
+                >
+                  <Button
+                    onClick={() => itemSort(item)}
+                    sx={{
+                      fontSize: "20px",
+                      fontWeight: "400",
+                      zIndex: "100",
+                      padding: "0px 0px",
+                    }}
+                  >
                     <i class="bx bx-heart"></i>
-                  </Typography>
+                  </Button>
                 </Box>
                 <Box position={"absolute"} top={"280px"} left={"10px"}>
                   <Button
@@ -109,7 +113,7 @@ export const Product = ({ Content }) => {
                     Aksiya
                   </Button>
                 </Box>
-              </Button>
+              </Box>
               <Box
                 flexWrap={"wrap"}
                 textOverflow={"hidden"}

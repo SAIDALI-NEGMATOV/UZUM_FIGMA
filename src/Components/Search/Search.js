@@ -107,60 +107,62 @@ export const Search = () => {
                 </Typography>
               </Box>
             </Button>
-            <Button
-              ml="10px"
-              mt="10px"
-              gap={"10px"}
-              display={"flex"}
-              sx={[
-                { bgcolor: "#fff", color: "#000", padding: "0px 10px" },
-                { hover: { bgcolor: "#ccc" } },
-              ]}
-            >
-              <Box>
-                <Typography
-                  variant="i"
-                  fontSize={"15px"}
-                  fontWeight={"200"}
-                  bgcolor={"#fff"}
-                >
-                  <i class="bx bxs-heart"></i>
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="p" fontSize={"15px"} fontWeight={"400"}>
-                  Saralangan
-                </Typography>
-              </Box>
-            </Button>
-            <Link to={'/basket'}>
-
-            <Button
-              ml="10px"
-              mt="10px"
-              gap={"10px"}
-              display={"flex"}
-              sx={[
-                { bgcolor: "#fff", color: "#000", padding: "0px 10px" },
-                { hover: { bgcolor: "#ccc" } },
-              ]}
-            >
-              <Box>
-                <Typography
-                  variant="i"
-                  fontSize={"15px"}
-                  fontWeight={"200"}
-                  bgcolor={"#fff"}
-                >
-                  <i class="bx bx-briefcase"></i>
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="p" fontSize={"15px"} fontWeight={"400"}>
-                  Savat
-                </Typography>
-              </Box>
-            </Button>
+            <Link to={"/sorted"}>
+              <Button
+                ml="10px"
+                mt="10px"
+                gap={"10px"}
+                display={"flex"}
+                sx={[
+                  { bgcolor: "#fff", color: "#000", padding: "0px 10px" },
+                  { hover: { bgcolor: "#ccc" } },
+                ]}
+              >
+                {" "}
+                <Box>
+                  <Typography
+                    variant="i"
+                    fontSize={"15px"}
+                    fontWeight={"200"}
+                    bgcolor={"#fff"}
+                  >
+                    <i class="bx bxs-heart"></i>
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="p" fontSize={"15px"} fontWeight={"400"}>
+                    Saralangan
+                  </Typography>
+                </Box>
+              </Button>
+            </Link>
+            <Link to={"/basket"}>
+              <Button
+                ml="10px"
+                mt="10px"
+                gap={"10px"}
+                display={"flex"}
+                sx={[
+                  { bgcolor: "#fff", color: "#000", padding: "0px 10px" },
+                  { hover: { bgcolor: "#ccc" } },
+                ]}
+              >
+                <Box>
+                  <Typography
+                    variant="i"
+                    fontSize={"15px"}
+                    fontWeight={"200"}
+                    bgcolor={"#fff"}
+                  >
+                    <i class="bx bx-briefcase"></i>
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="p" fontSize={"15px"} fontWeight={"400"}>
+                    Savat
+                  </Typography>
+                </Box>
+              </Button>
             </Link>
           </Box>
         </Box>

@@ -7,10 +7,11 @@ import { Search } from "./Components/Search/Search";
 import { Navigation } from "./Components/Navigation/Navigation";
 import Oill from "./Components/Images/Oil.jpg";
 import Tide from "./Components/Images/Tide.jpg";
-import Un from "./Components/Images/Un.jpg";
+import Prela from "./Components/Images/Prela.jpg";
 import Xurmo from "./Components/Images/Xurmo.jpg";
 import { ItemProduct } from "./Components/ItemProduct";
 import { Basket } from "./Components/Basket/Basket";
+import { Sorted } from "./Components/Sorted/Sorted";
 
 function ProductItems(
   Id,
@@ -57,13 +58,13 @@ let Content = [
   ),
   ProductItems(
     3,
-    "Un",
-    Un,
-    "Bug'doy uni Melek birinchi nav, 1 kg",
-    "5.0 (44 baho)",
-    " 600 so'm/oyiga",
-    "10 000 so'm",
-    "5 000 so'm"
+    "Prela",
+    Prela,
+    "Tagliklar Perla Twin 42 dona + Perla Kids nam salfetkalari, 15 dona sovg'a",
+    "5.0 (10 baho)",
+    "6 840 so'm/oyiga",
+    "70 000 so'm",
+    "57 000 so'm"
   ),
   ProductItems(
     4,
@@ -110,6 +111,7 @@ function App() {
           element={<ItemProduct Content={Content} />}
         />
         <Route path="/basket" element={<Basket Content={Content}/>}/>
+      <Route path="/sorted" element={<Sorted Content={Content}/>}/>
       </Routes>
     </Box>
   );
