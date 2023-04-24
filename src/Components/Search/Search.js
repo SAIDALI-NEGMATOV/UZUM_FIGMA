@@ -20,7 +20,9 @@ export const Search = () => {
         gap={"20px"}
       >
         <Box>
+          <Link to='/'>
           <img src={Uzum} alt="" />
+          </Link>
         </Box>
         <Box display={"flex"} gap={"10px"}>
           <Box
@@ -51,6 +53,7 @@ export const Search = () => {
           </Box>
           <Box
             borderRadius={"5px"}
+            overflow={'hidden'}
             border={"1px solid #ccc"}
             width={"550px"}
             display={"flex"}

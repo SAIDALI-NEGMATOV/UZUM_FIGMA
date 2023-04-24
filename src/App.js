@@ -12,6 +12,20 @@ import Xurmo from "./Components/Images/Xurmo.jpg";
 import { ItemProduct } from "./Components/ItemProduct";
 import { Basket } from "./Components/Basket/Basket";
 import { Sorted } from "./Components/Sorted/Sorted";
+import Oill2 from './Components/Images/Oills.jpg'
+import Oill3 from './Components/Images/Oil3.jpg'
+import Oill4 from './Components/Images/Oill4.jpg'
+import Tide2 from './Components/Images/Tide2.jpg'
+import Tide3 from './Components/Images/Tide3.jpg'
+import Tide4 from './Components/Images/Tide4.jpg'
+import Prela2 from './Components/Images/Perla2.jpg'
+import Salfetka from './Components/Images/salfetka.jpg'
+import Xurmo2 from './Components/Images/Xurmo2.jpg'
+import Xurmo3 from './Components/Images/Xurmo3.jpg'
+import Guruch from './Components/Images/Guruch.jpg'
+import Guruch2 from './Components/Images/Guruch2.jpg'
+import Guruch3 from './Components/Images/Guruch3.jpg'
+import Guruch4 from './Components/Images/Guruch4.jpg'
 
 function ProductItems(
   Id,
@@ -21,7 +35,11 @@ function ProductItems(
   StarT,
   Credit,
   OldPrise,
-  NewPrise
+  NewPrise,
+  Img,
+  Img2,
+  Img3,
+  Img4
 ) {
   return {
     Id,
@@ -32,6 +50,10 @@ function ProductItems(
     Credit,
     OldPrise,
     NewPrise,
+    Img,
+    Img2,
+    Img3,
+    Img4
   };
 }
 
@@ -44,7 +66,11 @@ let Content = [
     "5.0 (65 baho)",
     " 1 820 so'm/oyiga",
     "19 000 so'm",
-    "14 000 so'm"
+    "14 000 so'm",
+    Oill,
+    Oill2,
+    Oill3,
+    Oill4
   ),
   ProductItems(
     2,
@@ -54,7 +80,11 @@ let Content = [
     "4.9 (406 baho)",
     " 1 820 so'm/oyiga",
     "19 000 so'm",
-    "14 000 so'm"
+    "14 000 so'm",
+    Tide,
+    Tide2,
+    Tide3,
+    Tide4
   ),
   ProductItems(
     3,
@@ -64,7 +94,11 @@ let Content = [
     "5.0 (10 baho)",
     "6 840 so'm/oyiga",
     "70 000 so'm",
-    "57 000 so'm"
+    "57 000 so'm",
+    Prela,
+    Prela2,
+    Prela,
+    Salfetka
   ),
   ProductItems(
     4,
@@ -74,17 +108,25 @@ let Content = [
     "5.0 (65 baho)",
     " 2 640 so'm/oyiga",
     "26 000 so'm",
-    "22 000 so'm"
+    "22 000 so'm",
+    Xurmo,
+    Xurmo,
+    Xurmo2,
+    Xurmo3
   ),
   ProductItems(
     5,
-    "Oil",
-    Oill,
-    "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
-    "5.0 (65 baho)",
-    " 1 820 so'm/oyiga",
-    "26 000 so'm",
-    "22 000 so'm"
+    "Guruch",
+    Guruch,
+    " Guruch lazer Xorazm chempioni eng yuqori nav, 900 g",
+    "5.0 (47 baho)",
+    " 1 920 so'm/oyiga",
+    "24 000 so'm",
+    "16 000 so'm",
+    Guruch,
+    Guruch2,
+    Guruch3,
+    Guruch4,
   ),
   ProductItems(
     6,
