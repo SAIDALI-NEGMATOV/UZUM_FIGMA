@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, colors } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // import { ItemProduct } from "../ItemProduct";
@@ -12,14 +12,24 @@ export const Product = ({ Content }) => {
   };
 
   let itemLocal = (item) => {
-    localStorage.setItem("ProductId", item.Id);
-    localStorage.setItem("ProductImage", item.defImg);
-    localStorage.setItem("ProductName", item.Name);
-    localStorage.setItem("ProductText", item.Text);
-    localStorage.setItem("ProductStarT", item.StarT);
-    localStorage.setItem("ProductCredit", item.Credit);
-    localStorage.setItem("ProductOldPrise", item.OldPrise);
-    localStorage.setItem("ProductNewPrise", item.NewPrise);
+    // localStorage.setItem("ProductId", item.Id);
+    // localStorage.setItem("ProductImage", item.defImg);
+    // localStorage.setItem("ProductName", item.Name);
+    // localStorage.setItem("ProductText", item.Text);
+    // localStorage.setItem("ProductStarT", item.StarT);
+    // localStorage.setItem("ProductCredit", item.Credit);
+    // localStorage.setItem("ProductOldPrise", item.OldPrise);
+    // localStorage.setItem("ProductNewPrise", item.NewPrise);
+    if(localStorage.getItem("korzinaProduct")){
+      let a = JSON.parse(localStorage.getItem("korzinaProduct"))
+      a.push(item)
+      localStorage.setItem("korzinaProduct", JSON.stringify(a))
+    }else{
+      localStorage.setItem("korzinaProduct", JSON.stringify([]))
+      let b = JSON.parse(localStorage.getItem("korzinaProduct"))
+      b.push(item)
+      localStorage.setItem("korzinaProduct", JSON.stringify(b))
+    }
   };
 
   const itemSort = (item) => {
@@ -31,6 +41,7 @@ export const Product = ({ Content }) => {
     localStorage.setItem("SortedCredit", item.Credit);
     localStorage.setItem("SortedOldPrise", item.OldPrise);
     localStorage.setItem("SortedNewPrise", item.NewPrise);
+  
   };
 
   return (
@@ -72,14 +83,14 @@ export const Product = ({ Content }) => {
               overflow={"hidden"}
             >
               <Box
-                sx={{
+                sx={[{
                   width: "250px",
                   height: "320px",
                   overflow: "hidden",
                   borderRadius: "10px",
                   position: "relative",
                   padding: "0px",
-                }}
+                },{"&&:hover": {scale:"1.05",transition:"0.75s all"}}]}
               >
                 <img
                   onClick={() => itemProduct(item)}
@@ -89,21 +100,11 @@ export const Product = ({ Content }) => {
                 />
                 <Box
                   position={"absolute"}
-                  top={"10px"}
-                  left={"180px"}
+                  top={"20px"}
+                  left={"200px"}
                   padding={0}
-                >
-                  <Button
-                    onClick={() => itemSort(item)}
-                    sx={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      zIndex: "100",
-                      padding: "0px 0px",
-                    }}
-                  >
-                    <i class="bx bx-heart"></i>
-                  </Button>
+                >   
+                    <i class="bx bx-heart" onClick={()=>itemSort(item)}></i>
                 </Box>
                 <Box position={"absolute"} top={"280px"} left={"10px"}>
                   <Button
@@ -157,7 +158,7 @@ export const Product = ({ Content }) => {
                   borderBottom={"1px solid #ccc"}
                   position={"relative"}
                   height={"10px"}
-                  width={"75px"}
+                  width={"100px"}
                   mt={"10px"}
                 >
                   <Typography

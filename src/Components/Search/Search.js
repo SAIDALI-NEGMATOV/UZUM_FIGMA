@@ -1,9 +1,10 @@
-import { Box, Typography, Button } from "@mui/material";
-import React from "react";
+import { Box, Typography, Button, Badge } from "@mui/material";
+import React, { useState } from "react";
 import Uzum from "../Images/Uzum.svg";
 import { Link } from "react-router-dom";
 
 export const Search = () => {
+  const [badgeVal, setBadgeVal] = useState(localStorage.getItem("korzinaProduct")?JSON.parse(localStorage.getItem("korzinaProduct")).length:0)
   return (
     <Box
       display={"flex"}
@@ -20,8 +21,8 @@ export const Search = () => {
         gap={"20px"}
       >
         <Box>
-          <Link to='/'>
-          <img src={Uzum} alt="" />
+          <Link to="/">
+            <img src={Uzum} alt="" />
           </Link>
         </Box>
         <Box display={"flex"} gap={"10px"}>
@@ -53,7 +54,7 @@ export const Search = () => {
           </Box>
           <Box
             borderRadius={"5px"}
-            overflow={'hidden'}
+            overflow={"hidden"}
             border={"1px solid #ccc"}
             width={"550px"}
             display={"flex"}
@@ -161,9 +162,15 @@ export const Search = () => {
                   </Typography>
                 </Box>
                 <Box>
-                  <Typography variant="p" fontSize={"15px"} fontWeight={"400"}>
-                    Savat
-                  </Typography>
+                  <Badge badgeContent={badgeVal} color="primary">
+                    <Typography
+                      variant="p"
+                      fontSize={"15px"}
+                      fontWeight={"400"}
+                    >
+                      Savat
+                    </Typography>
+                  </Badge>
                 </Box>
               </Button>
             </Link>

@@ -5,6 +5,11 @@ import { useState } from "react";
 export const Basket = () => {
   let [counter, setCounter] = useState(0);
   let [on, setOne] = useState(true);
+  const [infos, setInfos] = useState(
+    localStorage.getItem
+      ? JSON.parse(localStorage.getItem("korzinaProduct"))
+      : []
+  );
 
   const PluseBtn = () => {
     counter++;
@@ -21,43 +26,50 @@ export const Basket = () => {
     }
   };
 
-  function GetInfo(
-    Id,
-    Name,
-    defImg,
-    Text,
-    StarT,
-    Credit,
-    OldPrise,
-    NewPrise,
-  ) {
-    return {
-      Id,
-      Name,
-      defImg,
-      Text,
-      StarT,
-      Credit,
-      OldPrise,
-      NewPrise, 
-    };
+  // function GetInfo(
+  //   Id,
+  //   Name,
+  //   defImg,
+  //   Text,
+  //   StarT,
+  //   Credit,
+  //   OldPrise,
+  //   NewPrise,
+  // ) {
+  //   return {
+  //     Id,
+  //     Name,
+  //     defImg,
+  //     Text,
+  //     StarT,
+  //     Credit,
+  //     OldPrise,
+  //     NewPrise,
+  //   };
+  // }
+
+  // let SetInfo = [
+  //   GetInfo(
+  //     localStorage.getItem("ProductId"),
+  //     localStorage.getItem("ProductName"),
+  //     localStorage.getItem("ProductImage"),
+  //     localStorage.getItem("ProductText"),
+  //     localStorage.getItem("ProductStarT"),
+  //     localStorage.getItem("ProductCredit"),
+  //     localStorage.getItem("ProductOldPrise"),
+  //     localStorage.getItem("ProductNewPrise"),
+
+  //   ),
+  // ];
+
+  // console.log(SetInfo);
+
+  let delItem = (item, index)=>{
+    let arr = JSON.parse(localStorage.getItem("korzinaProduct"))
+    arr.splice(index, 1)
+    localStorage.setItem("korzinaProduct", JSON.stringify(arr))
   }
 
-  let SetInfo = [
-    GetInfo(
-      localStorage.getItem("ProductId"),
-      localStorage.getItem("ProductName"),
-      localStorage.getItem("ProductImage"),
-      localStorage.getItem("ProductText"),
-      localStorage.getItem("ProductStarT"),
-      localStorage.getItem("ProductCredit"),
-      localStorage.getItem("ProductOldPrise"),
-      localStorage.getItem("ProductNewPrise"),
-      
-    ),
-  ];
-
-  console.log(SetInfo);
 
   return (
     <Box
@@ -76,53 +88,51 @@ export const Basket = () => {
         flexWrap={"wrap"}
         gap={"5px"}
       >
-        {SetInfo.length === 0
-          ? ""
-          : SetInfo.map((item, index) => (
-              <Box key={index}>
-                <Box width={"100%"} marginTop={"40px"} display={"flex"}>
-                  <Typography variant="h4">Savatingiz,</Typography>
-                  <Typography variant="h4" sx={{ opacity: ".54" }}>
-                    {}
-                  </Typography>
-                  <Typography variant="h4" sx={{ opacity: ".54" }}>
-                    mahsulot
-                  </Typography>
+        <Box>
+          <Box width={"100%"} marginTop={"40px"} display={"flex"}>
+            <Typography variant="h4">Savatingiz,</Typography>
+            <Typography variant="h4" sx={{ opacity: ".54" }}>
+              {}
+            </Typography>
+            <Typography variant="h4" sx={{ opacity: ".54" }}>
+              mahsulot
+            </Typography>
+          </Box>
+          <Box display={"flex"}>
+            <Box display={'flex'}>
+              <Box
+                border={"1px solid #C2C2C2"}
+                padding={"20px"}
+                borderRadius={"5px"}
+              >
+                <Box
+                  width={"100%"}
+                  display={"flex"}
+                  padding="10px"
+                  justifyContent={"space-between"}
+                >
+                  <Box mt="8px" display={"flex"}>
+                    <input
+                      type="checkbox"
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <Typography variant="p" ml={"10px"}>
+                      Hammasini yechish
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"}>
+                    <Typography variant="p">
+                      Yetkazib berishning eng yaqin sanasi:
+                    </Typography>
+                    <Button sx={{ border: "1px solid #7000ff", ml: "10px" }}>
+                      M04 22 (Indin)
+                    </Button>
+                  </Box>
                 </Box>
-                <Box display={"flex"}>
-                  <Box>
-                    <Box
-                      border={"1px solid #C2C2C2"}
-                      padding={"20px"}
-                      borderRadius={"5px"}
-                    >
-                      <Box
-                        width={"100%"}
-                        display={"flex"}
-                        padding="10px"
-                        justifyContent={"space-between"}
-                      >
-                        <Box mt="8px" display={"flex"}>
-                          <input
-                            type="checkbox"
-                            style={{ width: "20px", height: "20px" }}
-                          />
-                          <Typography variant="p" ml={"10px"}>
-                            Hammasini yechish
-                          </Typography>
-                        </Box>
-                        <Box display={"flex"}>
-                          <Typography variant="p">
-                            Yetkazib berishning eng yaqin sanasi:
-                          </Typography>
-                          <Button
-                            sx={{ border: "1px solid #7000ff", ml: "10px" }}
-                          >
-                            M04 22 (Indin)
-                          </Button>
-                        </Box>
-                      </Box>
-                      <Box borderTop={"1px solid #C2C2C2"}>
+                {infos.length === 0
+                  ? ""
+                  : infos.map((item, index) => (
+                      <Box  key={index} borderTop={"1px solid #C2C2C2"}>
                         <Box display={"flex"} padding={"20px"}>
                           <Box display={"flex"}>
                             <Box
@@ -214,6 +224,7 @@ export const Basket = () => {
                             >
                               <Box>
                                 <Button
+                                onClick={()=>delItem(item, index)}
                                   sx={{
                                     color: "black",
                                     fontSize: "30px",
@@ -255,135 +266,139 @@ export const Basket = () => {
                           </Box>
                         </Box>
                       </Box>
-                    </Box>
-                  </Box>
+                    ))}
+              </Box>
+                <Box
+                  ml={"10px"}
+                  border={"1px solid #ccc"}
+                  overflow={"hidden"}
+                  borderRadius={"10px"}
+                  padding={"10px 20px"}
+                >
                   <Box
-                    ml={"10px"}
-                    border={"1px solid #ccc"}
-                    overflow={"hidden"}
-                    borderRadius={"10px"}
-                    padding={"10px 20px"}
+                    borderBottom={"1px solid #ccc"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    flexDirection={"column"}
+                    padding={"0px 0px"}
                   >
                     <Box
-                      borderBottom={"1px solid #ccc"}
                       display={"flex"}
+                      padding={"10px 10px"}
+                      gap={"10px"}
                       justifyContent={"center"}
                       alignItems={"center"}
-                      flexDirection={"column"}
-                      padding={"0px 0px"}
                     >
                       <Box
                         display={"flex"}
+                        justifyContent={"flex-start"}
+                        alignItems={"flex-start"}
+                        border={"1px solid #72F306"}
+                        color={"#72F306"}
+                        borderRadius={"50%"}
                         padding={"10px 10px"}
-                        gap={"10px"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
                       >
-                        <Box
-                          display={"flex"}
-                          justifyContent={"flex-start"}
-                          alignItems={"flex-start"}
-                          border={"1px solid #72F306"}
-                          color={"#72F306"}
-                          borderRadius={"50%"}
-                          padding={"10px 10px"}
-                        >
-                          <i class="bx bx-check"></i>
-                        </Box>
-                        <Box width={"200px"} flexWrap={"wrap"}>
-                          <Typography variant="p" fontWeight={"600"}>
-                            Buyurtmangizni rasmiy topshirish
-                          </Typography>
-                          <Typography variant="p">
-                            {" "}
-                            punktiga bepul yetkazib beramiz
-                          </Typography>
-                        </Box>
+                        <i class="bx bx-check"></i>
                       </Box>
-                      <Box
-                        display={"flex"}
-                        flexWrap={"wrap"}
-                        padding={"10px 10px"}
-                        gap={"10px"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        width={"250px"}
-                        sx={{ opacity: "0.70" }}
-                      >
-                        <Typography variant="p" fontSize={"12px"} ml={"35px"}>
-                          Eshikkacha yetkazib berishgacha yana 476 000 so'm
+                      <Box width={"200px"} flexWrap={"wrap"}>
+                        <Typography variant="p" fontWeight={"600"}>
+                          Buyurtmangizni rasmiy topshirish
+                        </Typography>
+                        <Typography variant="p">
+                          {" "}
+                          punktiga bepul yetkazib beramiz
                         </Typography>
                       </Box>
                     </Box>
-                    <Box flexDirection={"column"}>
-                      <Box>
+                    <Box
+                      display={"flex"}
+                      flexWrap={"wrap"}
+                      padding={"10px 10px"}
+                      gap={"10px"}
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      width={"250px"}
+                      sx={{ opacity: "0.70" }}
+                    >
+                      <Typography variant="p" fontSize={"12px"} ml={"35px"}>
+                        Eshikkacha yetkazib berishgacha yana 476 000 so'm
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box flexDirection={"column"}>
+                    <Box>
+                      <Typography
+                        variant="p"
+                        fontWeight={"600"}
+                        fontSize={"20px"}
+                      >
+                        Buyurtmangiz
+                      </Typography>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      mt={"20px"}
+                      gap={"80px"}
+                      sx={{ opacity: "0.80" }}
+                    >
+                      <Typography variant="p">Mahsulotlar():</Typography>
+                      <Typography>
+                        {/* {item.NewPrise}  */}
+                        0000
+                      </Typography>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      mt="10px"
+                      borderRadius={"2px"}
+                      border={"1px solid #7000ff"}
+                      color={"#7000ff"}
+                      fontWeight={"500"}
+                      padding={"5px 5px"}
+                    >
+                      Yetkazib berish M04 24 (Erta)
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"space-between"}
+                      mt={"15px"}
+                    >
+                      <Typography variant="p">Jami:</Typography>
+                      <Box flexDirection={"column"} display={"flex"}>
                         <Typography
                           variant="p"
-                          fontWeight={"600"}
-                          fontSize={"20px"}
+                          fontWeight={"500"}
+                          fontSize={"25px"}
                         >
-                          Buyurtmangiz
+                          {/* {item.NewPrise} */} 0000
+                        </Typography>
+                        <Typography variant="p" color={"#00c853"}>
+                          {/* Tejovingiz:{item.OldPrise --- item.NewPrise} */}{" "}
+                          0000
                         </Typography>
                       </Box>
-                      <Box
-                        display={"flex"}
-                        mt={"20px"}
-                        gap={"80px"}
-                        sx={{ opacity: "0.80" }}
+                    </Box>
+                    <Box>
+                      <Button
+                        variant="contained"
+                        sx={{
+                          borderRadius: "15px",
+                          padding: "13px 27px",
+                          bgcolor: "#7000ff",
+                          mt: "15px",
+                        }}
                       >
-                        <Typography variant="p">Mahsulotlar():</Typography>
-                        <Typography>{item.NewPrise}</Typography>
-                      </Box>
-                      <Box
-                        display={"flex"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mt="10px"
-                        borderRadius={"2px"}
-                        border={"1px solid #7000ff"}
-                        color={"#7000ff"}
-                        fontWeight={"500"}
-                        padding={"5px 5px"}
-                      >
-                        Yetkazib berish M04 24 (Erta)
-                      </Box>
-                      <Box
-                        display={"flex"}
-                        justifyContent={"space-between"}
-                        mt={"15px"}
-                      >
-                        <Typography variant="p">Jami:</Typography>
-                        <Box flexDirection={"column"} display={"flex"}>
-                          <Typography
-                            variant="p"
-                            fontWeight={"500"}
-                            fontSize={"25px"}
-                          >
-                            {item.NewPrise}
-                          </Typography>
-                          <Typography variant="p" color={"#00c853"}>
-                            Tejovingiz:{item.OldPrise --- item.NewPrise}
-                          </Typography>
-                        </Box>
-                      </Box>
-                      <Box>
-                        <Button
-                          variant="contained"
-                          sx={{
-                            borderRadius: "15px",
-                            padding: "13px 27px",
-                            bgcolor: "#7000ff",
-                            mt:"15px"
-                          }}
-                        >
-                          Rasmiylashtirishga oʻtish
-                        </Button>
-                      </Box>
+                        Rasmiylashtirishga oʻtish
+                      </Button>
                     </Box>
                   </Box>
                 </Box>
-              </Box>
-            ))}
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

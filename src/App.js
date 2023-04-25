@@ -26,6 +26,15 @@ import Guruch from './Components/Images/Guruch.jpg'
 import Guruch2 from './Components/Images/Guruch2.jpg'
 import Guruch3 from './Components/Images/Guruch3.jpg'
 import Guruch4 from './Components/Images/Guruch4.jpg'
+import Kross from './Components/Images/kROSS.jpg'
+import Kross2 from './Components/Images/Kross2.jpg'
+import Kross3 from './Components/Images/Kross3.jpg'
+import Kross4 from './Components/Images/Kross4.jpg'
+import Esty from './Components/Images/Esty.jpg'
+import Esty2 from './Components/Images/Esty2.jpg'
+import Esty3 from './Components/Images/Esty3.jpg'
+import Esty4 from './Components/Images/Esty4.jpg'
+import { useEffect } from "react";
 
 function ProductItems(
   Id,
@@ -33,6 +42,7 @@ function ProductItems(
   defImg,
   Text,
   StarT,
+  Amount,
   Credit,
   OldPrise,
   NewPrise,
@@ -47,6 +57,7 @@ function ProductItems(
     defImg,
     Text,
     StarT,
+    Amount,
     Credit,
     OldPrise,
     NewPrise,
@@ -64,6 +75,7 @@ let Content = [
     Oill,
     "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
     "5.0 (65 baho)",
+    'Bor-yoʻgi 2 dona qoldi',
     " 1 820 so'm/oyiga",
     "19 000 so'm",
     "14 000 so'm",
@@ -78,6 +90,7 @@ let Content = [
     Tide,
     "Kir yuvish kukuni Tide Color, Lenor Touch, avtomat, 3 kg",
     "4.9 (406 baho)",
+    "Oxirgisi qoldi!",
     " 1 820 so'm/oyiga",
     "19 000 so'm",
     "14 000 so'm",
@@ -92,6 +105,7 @@ let Content = [
     Prela,
     "Tagliklar Perla Twin 42 dona + Perla Kids nam salfetkalari, 15 dona sovg'a",
     "5.0 (10 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
     "6 840 so'm/oyiga",
     "70 000 so'm",
     "57 000 so'm",
@@ -106,6 +120,7 @@ let Content = [
     Xurmo,
     "Xurmo Date Bam, 650 g + gazlangan ichimlik Pepsi, 260 ml",
     "5.0 (65 baho)",
+    "Sotuvda 208 dona bor",
     " 2 640 so'm/oyiga",
     "26 000 so'm",
     "22 000 so'm",
@@ -120,6 +135,7 @@ let Content = [
     Guruch,
     " Guruch lazer Xorazm chempioni eng yuqori nav, 900 g",
     "5.0 (47 baho)",
+    "Bor-yoʻgi 3 dona qoldi",
     " 1 920 so'm/oyiga",
     "24 000 so'm",
     "16 000 so'm",
@@ -130,13 +146,63 @@ let Content = [
   ),
   ProductItems(
     6,
-    "Oil",
-    Oill,
-    "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
     "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
     " 1 820 so'm/oyiga",
-    "19 000 so'm",
-    "14 000 so'm"
+    "125 000 so'm",
+    "175 000 so'm",
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ProductItems(
+    6,
+    "Esty",
+    Esty,
+    "Qog'oz salfetkalar Esty, 23 х 24 sm, 100 dona",
+    "5.0 (65 baho)",
+    "Sotuvda 621 dona bor",
+    "360 so'm/oyiga",
+    "4 000 so'm",
+    "3 000 so'm",
+    Esty,
+    Esty2,
+    Esty3,
+    Esty4
+  ),
+  ProductItems(
+    6,
+    "",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    "1 250 000 so'm",
+    "175 000 so'm",
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ProductItems(
+    6,
+    "Oil",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    "1 250 000 so'm",
+    "175 000 so'm",
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
   ),
 ];
 

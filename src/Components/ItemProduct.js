@@ -167,7 +167,7 @@ export const ItemProduct = ({ Content }) => {
                 </Box>
                 <Box mt={"22px"}>
                   <Typography variant="p" fontSize={"20px"} color={"#7000ff"}>
-                    Bor-yoʻgi 2 dona qoldi
+                    {Content[contentId].Amount}
                   </Typography>
                 </Box>
               </Box>
@@ -181,7 +181,7 @@ export const ItemProduct = ({ Content }) => {
               </Typography>
               <Box
                 borderBottom={"1px solid #c1c1c1"}
-                width={"85px"}
+                width={"140px"}
                 height={"30px"}
                 position={"relative"}
                 mt={"-10px"}
@@ -203,7 +203,7 @@ export const ItemProduct = ({ Content }) => {
                   padding: "0px 0px",
                   background: "rgb(80, 0, 170)",
                   mt: "5px",
-                  ml: "10px",
+                  ml: "20px",
                 }}
               >
                 Aksiya
