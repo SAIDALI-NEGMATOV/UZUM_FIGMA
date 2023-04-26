@@ -1,4 +1,4 @@
-import { Box, Typography, Button, colors } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // import { ItemProduct } from "../ItemProduct";
@@ -20,15 +20,15 @@ export const Product = ({ Content }) => {
     // localStorage.setItem("ProductCredit", item.Credit);
     // localStorage.setItem("ProductOldPrise", item.OldPrise);
     // localStorage.setItem("ProductNewPrise", item.NewPrise);
-    if(localStorage.getItem("korzinaProduct")){
-      let a = JSON.parse(localStorage.getItem("korzinaProduct"))
-      a.push(item)
-      localStorage.setItem("korzinaProduct", JSON.stringify(a))
-    }else{
-      localStorage.setItem("korzinaProduct", JSON.stringify([]))
-      let b = JSON.parse(localStorage.getItem("korzinaProduct"))
-      b.push(item)
-      localStorage.setItem("korzinaProduct", JSON.stringify(b))
+    if (localStorage.getItem("korzinaProduct")) {
+      let a = JSON.parse(localStorage.getItem("korzinaProduct"));
+      a.push(item);
+      localStorage.setItem("korzinaProduct", JSON.stringify(a));
+    } else {
+      localStorage.setItem("korzinaProduct", JSON.stringify([]));
+      let b = JSON.parse(localStorage.getItem("korzinaProduct"));
+      b.push(item);
+      localStorage.setItem("korzinaProduct", JSON.stringify(b));
     }
   };
 
@@ -41,7 +41,6 @@ export const Product = ({ Content }) => {
     localStorage.setItem("SortedCredit", item.Credit);
     localStorage.setItem("SortedOldPrise", item.OldPrise);
     localStorage.setItem("SortedNewPrise", item.NewPrise);
-  
   };
 
   return (
@@ -74,26 +73,43 @@ export const Product = ({ Content }) => {
           {Content.map((item, index) => (
             <Box
               key={index}
-              width={"240px"}
               display={"flex"}
               justifyContent={"flex-start"}
               alignItems={"flex-start"}
               flexDirection={"column"}
               bgcolor={"#fff"}
-              overflow={"hidden"}
+              onClick={() => itemProduct(item)}
+              sx={[
+                { width: "240px", overflow: "hidden",borderRadius:"0px  " },
+                {
+                  "&&:hover": {
+                    boxShadow: " 5px 5px 4px #d5d5d5,-5px -5px 4px #ebebeb",
+                    backgroundColor: " #FFF",
+                    borderRadius:"9px"
+                  },
+                },
+              ]}
             >
               <Box
-                sx={[{
-                  width: "250px",
-                  height: "320px",
-                  overflow: "hidden",
-                  borderRadius: "10px",
-                  position: "relative",
-                  padding: "0px",
-                },{"&&:hover": {scale:"1.05",transition:"0.75s all"}}]}
+                sx={[
+                  {
+                    width: "250px",
+                    height: "320px",
+                    overflow: "hidden",
+                    borderRadius: "10px",
+                    position: "relative",
+                    padding: "0px",
+                  },
+                  {
+                    "&&:hover": {
+                      scale: "1.02",
+                      transition: "0.65s all",
+                      overflow: "hidden",
+                    },
+                  },
+                ]}
               >
                 <img
-                  onClick={() => itemProduct(item)}
                   src={item.defImg}
                   alt=""
                   style={{ width: "100%", height: "100%" }}
@@ -103,8 +119,8 @@ export const Product = ({ Content }) => {
                   top={"20px"}
                   left={"200px"}
                   padding={0}
-                >   
-                    <i class="bx bx-heart" onClick={()=>itemSort(item)}></i>
+                >
+                  <i class="bx bx-heart" onClick={() => itemSort(item)}></i>
                 </Box>
                 <Box position={"absolute"} top={"280px"} left={"10px"}>
                   <Button

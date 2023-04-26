@@ -37,8 +37,16 @@
   }
 
   .swiper-button-next{
-    color: red;
+    margin-right: 260px;
+    color: #ccc;
+    border-radius: 50%;
   }
   .swiper-button-prev{
-    color: green;
+    color: #ccc;
+    /* border:1px solid rgba(118,121,127,0.3);
+    background: #A2A2A2; */
+    padding: 10px 10px;
+    border-radius: 50%;
+    margin-left: 260px;
+    z-index: 100;
   }

@@ -12,29 +12,30 @@ import Xurmo from "./Components/Images/Xurmo.jpg";
 import { ItemProduct } from "./Components/ItemProduct";
 import { Basket } from "./Components/Basket/Basket";
 import { Sorted } from "./Components/Sorted/Sorted";
-import Oill2 from './Components/Images/Oills.jpg'
-import Oill3 from './Components/Images/Oil3.jpg'
-import Oill4 from './Components/Images/Oill4.jpg'
-import Tide2 from './Components/Images/Tide2.jpg'
-import Tide3 from './Components/Images/Tide3.jpg'
-import Tide4 from './Components/Images/Tide4.jpg'
-import Prela2 from './Components/Images/Perla2.jpg'
-import Salfetka from './Components/Images/salfetka.jpg'
-import Xurmo2 from './Components/Images/Xurmo2.jpg'
-import Xurmo3 from './Components/Images/Xurmo3.jpg'
-import Guruch from './Components/Images/Guruch.jpg'
-import Guruch2 from './Components/Images/Guruch2.jpg'
-import Guruch3 from './Components/Images/Guruch3.jpg'
-import Guruch4 from './Components/Images/Guruch4.jpg'
-import Kross from './Components/Images/kROSS.jpg'
-import Kross2 from './Components/Images/Kross2.jpg'
-import Kross3 from './Components/Images/Kross3.jpg'
-import Kross4 from './Components/Images/Kross4.jpg'
-import Esty from './Components/Images/Esty.jpg'
-import Esty2 from './Components/Images/Esty2.jpg'
-import Esty3 from './Components/Images/Esty3.jpg'
-import Esty4 from './Components/Images/Esty4.jpg'
-import { useEffect } from "react";
+import Oill2 from "./Components/Images/Oills.jpg";
+import Oill3 from "./Components/Images/Oil3.jpg";
+import Oill4 from "./Components/Images/Oill4.jpg";
+import Tide2 from "./Components/Images/Tide2.jpg";
+import Tide3 from "./Components/Images/Tide3.jpg";
+import Tide4 from "./Components/Images/Tide4.jpg";
+import Prela2 from "./Components/Images/Perla2.jpg";
+import Salfetka from "./Components/Images/salfetka.jpg";
+import Xurmo2 from "./Components/Images/Xurmo2.jpg";
+import Xurmo3 from "./Components/Images/Xurmo3.jpg";
+import Guruch from "./Components/Images/Guruch.jpg";
+import Guruch2 from "./Components/Images/Guruch2.jpg";
+import Guruch3 from "./Components/Images/Guruch3.jpg";
+import Guruch4 from "./Components/Images/Guruch4.jpg";
+import Kross from "./Components/Images/kROSS.jpg";
+import Kross2 from "./Components/Images/Kross2.jpg";
+import Kross3 from "./Components/Images/Kross3.jpg";
+import Kross4 from "./Components/Images/Kross4.jpg";
+import Esty from "./Components/Images/Esty.jpg";
+import Esty2 from "./Components/Images/Esty2.jpg";
+import Esty3 from "./Components/Images/Esty3.jpg";
+import Esty4 from "./Components/Images/Esty4.jpg";
+
+// import { useEffect } from "react";
 
 function ProductItems(
   Id,
@@ -64,7 +65,7 @@ function ProductItems(
     Img,
     Img2,
     Img3,
-    Img4
+    Img4,
   };
 }
 
@@ -75,7 +76,7 @@ let Content = [
     Oill,
     "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
     "5.0 (65 baho)",
-    'Bor-yoʻgi 2 dona qoldi',
+    "Bor-yoʻgi 2 dona qoldi",
     " 1 820 so'm/oyiga",
     "19 000 so'm",
     "14 000 so'm",
@@ -142,7 +143,7 @@ let Content = [
     Guruch,
     Guruch2,
     Guruch3,
-    Guruch4,
+    Guruch4
   ),
   ProductItems(
     6,
@@ -206,6 +207,9 @@ let Content = [
   ),
 ];
 
+
+
+
 function App() {
   return (
     <Box>
@@ -218,8 +222,8 @@ function App() {
           path="/components/:contentId"
           element={<ItemProduct Content={Content} />}
         />
-        <Route path="/basket" element={<Basket Content={Content}/>}/>
-      <Route path="/sorted" element={<Sorted Content={Content}/>}/>
+        <Route path="/basket" element={<Basket Content={Content} />} />
+        <Route path="/sorted" element={<Sorted Content={Content} />} />
       </Routes>
     </Box>
   );

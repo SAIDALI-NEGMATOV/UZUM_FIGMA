@@ -11,7 +11,9 @@ export const Basket = () => {
       : []
   );
 
-  const PluseBtn = () => {
+  console.log(setInfos);
+
+  const PluseBtn = (index) => {
     counter++;
     setCounter(counter);
     on = false;
@@ -26,50 +28,11 @@ export const Basket = () => {
     }
   };
 
-  // function GetInfo(
-  //   Id,
-  //   Name,
-  //   defImg,
-  //   Text,
-  //   StarT,
-  //   Credit,
-  //   OldPrise,
-  //   NewPrise,
-  // ) {
-  //   return {
-  //     Id,
-  //     Name,
-  //     defImg,
-  //     Text,
-  //     StarT,
-  //     Credit,
-  //     OldPrise,
-  //     NewPrise,
-  //   };
-  // }
-
-  // let SetInfo = [
-  //   GetInfo(
-  //     localStorage.getItem("ProductId"),
-  //     localStorage.getItem("ProductName"),
-  //     localStorage.getItem("ProductImage"),
-  //     localStorage.getItem("ProductText"),
-  //     localStorage.getItem("ProductStarT"),
-  //     localStorage.getItem("ProductCredit"),
-  //     localStorage.getItem("ProductOldPrise"),
-  //     localStorage.getItem("ProductNewPrise"),
-
-  //   ),
-  // ];
-
-  // console.log(SetInfo);
-
-  let delItem = (item, index)=>{
-    let arr = JSON.parse(localStorage.getItem("korzinaProduct"))
-    arr.splice(index, 1)
-    localStorage.setItem("korzinaProduct", JSON.stringify(arr))
-  }
-
+  let delItem = (item, index) => {
+    let arr = JSON.parse(localStorage.getItem("korzinaProduct"));
+    arr.splice(index, 1);
+    localStorage.setItem("korzinaProduct", JSON.stringify(arr));
+  };
 
   return (
     <Box
@@ -99,7 +62,7 @@ export const Basket = () => {
             </Typography>
           </Box>
           <Box display={"flex"}>
-            <Box display={'flex'}>
+            <Box display={"flex"}>
               <Box
                 border={"1px solid #C2C2C2"}
                 padding={"20px"}
@@ -120,7 +83,13 @@ export const Basket = () => {
                       Hammasini yechish
                     </Typography>
                   </Box>
-                  <Box display={"flex"}>
+                  <Box
+                    height={"50px"}
+                    mt={"-10px"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
                     <Typography variant="p">
                       Yetkazib berishning eng yaqin sanasi:
                     </Typography>
@@ -132,7 +101,7 @@ export const Basket = () => {
                 {infos.length === 0
                   ? ""
                   : infos.map((item, index) => (
-                      <Box  key={index} borderTop={"1px solid #C2C2C2"}>
+                      <Box key={index} borderTop={"1px solid #C2C2C2"}>
                         <Box display={"flex"} padding={"20px"}>
                           <Box display={"flex"}>
                             <Box
@@ -157,9 +126,11 @@ export const Basket = () => {
                           <Box
                             display={"flex"}
                             justifyContent={"space-between"}
+                            width={"100%"}
+                            // border={1}
                           >
-                            <Box>
-                              <Box ml={"50px"}>
+                            <Box mt={"20px"}>
+                              <Box ml={"50px"} width={"450px"}>
                                 <Typography variant="h6" fontSize={"16px"}>
                                   {item.Text}
                                 </Typography>
@@ -174,7 +145,11 @@ export const Basket = () => {
                                       Sotuvchi:
                                     </Typography>
                                   </Box>
-                                  <Box display={"flex"}>
+                                  <Box
+                                    display={"flex"}
+                                    justifyContent={"space-around"}
+                                    position={"relative"}
+                                  >
                                     <Typography
                                       variant="h6"
                                       sx={{ mt: "25px" }}
@@ -191,10 +166,11 @@ export const Basket = () => {
                                       border={"1px solid #c2c2c2"}
                                       overflow={"hidden"}
                                       mt={"20px"}
-                                      ml={"180px"}
+                                      position={"absolute"}
+                                      left={"250px"}
                                     >
                                       <Button
-                                        onClick={MinuseBtn}
+                                        onClick={() => MinuseBtn(index)}
                                         disabled={on}
                                         sx={{ padding: "0px 0px" }}
                                       >
@@ -204,7 +180,7 @@ export const Basket = () => {
                                         {counter}
                                       </Typography>
                                       <Button
-                                        onClick={PluseBtn}
+                                        onClick={() => PluseBtn(index)}
                                         sx={{ padding: "0px 0px" }}
                                       >
                                         +
@@ -217,14 +193,18 @@ export const Basket = () => {
                             <Box
                               display={"flex"}
                               flexDirection={"column"}
-                              ml="50px"
+                              justifyContent={"center"}
+                              alignItems={"flex-end "}
+                              paddingRight={"10px"}
+                              // border={1}
+                              position={"relative"}
                               gap={"10px"}
-                              width={"120px"}
+                              width={"220px"}
                               mb="20px"
                             >
                               <Box>
                                 <Button
-                                onClick={()=>delItem(item, index)}
+                                  onClick={() => delItem(item, index)}
                                   sx={{
                                     color: "black",
                                     fontSize: "30px",
@@ -247,17 +227,12 @@ export const Basket = () => {
                                 </Typography>
                               </Box>
                               <Box
-                                borderBottom={1}
-                                position={"relative"}
+                                borderTop={1}
                                 padding={"2px"}
                                 ml="40px"
                                 sx={{ opacity: "0.70" }}
                               >
-                                <Typography
-                                  fontSize={"14px"}
-                                  position={"absolute"}
-                                  top={"-5px"}
-                                >
+                                <Typography fontSize={"14px"} mt={"-12px"}>
                                   {" "}
                                   {item.OldPrise}
                                 </Typography>
@@ -268,6 +243,7 @@ export const Basket = () => {
                       </Box>
                     ))}
               </Box>
+              <Box>
                 <Box
                   ml={"10px"}
                   border={"1px solid #ccc"}
@@ -373,10 +349,9 @@ export const Basket = () => {
                           fontWeight={"500"}
                           fontSize={"25px"}
                         >
-                          {/* {item.NewPrise} */} 0000
+                          0000
                         </Typography>
                         <Typography variant="p" color={"#00c853"}>
-                          {/* Tejovingiz:{item.OldPrise --- item.NewPrise} */}{" "}
                           0000
                         </Typography>
                       </Box>
@@ -386,7 +361,7 @@ export const Basket = () => {
                         variant="contained"
                         sx={{
                           borderRadius: "15px",
-                          padding: "13px 27px",
+                          padding: "13px 25px",
                           bgcolor: "#7000ff",
                           mt: "15px",
                         }}
@@ -396,6 +371,7 @@ export const Basket = () => {
                     </Box>
                   </Box>
                 </Box>
+              </Box>
             </Box>
           </Box>
         </Box>

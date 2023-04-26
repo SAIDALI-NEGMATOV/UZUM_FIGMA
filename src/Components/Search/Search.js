@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Search = () => {
   const [badgeVal, setBadgeVal] = useState(localStorage.getItem("korzinaProduct")?JSON.parse(localStorage.getItem("korzinaProduct")).length:0)
+  console.log(setBadgeVal);
   return (
     <Box
       display={"flex"}
