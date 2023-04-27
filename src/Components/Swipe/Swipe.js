@@ -22,7 +22,7 @@ import "./swipper.css";
 // import required modules
 import { Navigation } from "swiper";
 
-let Swipe = ({Afisha}) => {
+let Swipe = () => {
 
   return (
     <>

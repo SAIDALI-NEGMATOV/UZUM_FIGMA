@@ -33,14 +33,24 @@ export const Product = ({ Content }) => {
   };
 
   const itemSort = (item) => {
-    localStorage.setItem("SortedId", item.Id);
-    localStorage.setItem("SortedImage", item.defImg);
-    localStorage.setItem("SortedName", item.Name);
-    localStorage.setItem("SortedText", item.Text);
-    localStorage.setItem("SortedStarT", item.StarT);
-    localStorage.setItem("SortedCredit", item.Credit);
-    localStorage.setItem("SortedOldPrise", item.OldPrise);
-    localStorage.setItem("SortedNewPrise", item.NewPrise);
+    // localStorage.setItem("SortedId", item.Id);
+    // localStorage.setItem("SortedImage", item.defImg);
+    // localStorage.setItem("SortedName", item.Name);
+    // localStorage.setItem("SortedText", item.Text);
+    // localStorage.setItem("SortedStarT", item.StarT);
+    // localStorage.setItem("SortedCredit", item.Credit);
+    // localStorage.setItem("SortedOldPrise", item.OldPrise);
+    // localStorage.setItem("SortedNewPrise", item.NewPrise);
+    if (localStorage.getItem("SortedProduct")){
+      let a = JSON.parse(localStorage.getItem("SortedProduct"))
+      a.push(item)
+      localStorage.setItem('SortedProduct',JSON.stringify(a))
+    }else {
+      localStorage.setItem("SortedProduct",JSON.stringify([]))
+      let b = JSON.parse(localStorage.getItem('SortedProduct'))
+      b.push(item)
+      localStorage.setItem("SortedProduct",JSON.stringify(b))
+    }
   };
 
   return (
@@ -118,6 +128,7 @@ export const Product = ({ Content }) => {
                   position={"absolute"}
                   top={"20px"}
                   left={"200px"}
+                  zIndex={'100'}
                   padding={0}
                 >
                   <i class="bx bx-heart" onClick={() => itemSort(item)}></i>
@@ -206,6 +217,7 @@ export const Product = ({ Content }) => {
                       borderRadius: "50%",
                       color: "#000",
                       padding: "10px 10px",
+            
                     }}
                   >
                     <i class="bx bx-cart"></i>

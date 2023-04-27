@@ -11,9 +11,9 @@ export const Basket = () => {
       : []
   );
 
-  console.log(setInfos);
 
   const PluseBtn = (index) => {
+    setInfos(infos)
     counter++;
     setCounter(counter);
     on = false;
