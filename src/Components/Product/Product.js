@@ -89,6 +89,7 @@ export const Product = ({ Content }) => {
               flexDirection={"column"}
               bgcolor={"#fff"}
               onClick={() => itemProduct(item)}
+              zIndex={'1'}
               sx={[
                 { width: "240px", overflow: "hidden",borderRadius:"0px  " },
                 {
@@ -146,6 +147,7 @@ export const Product = ({ Content }) => {
                 flexWrap={"wrap"}
                 textOverflow={"hidden"}
                 overflow={"hidden"}
+                padding={'10px'}
               >
                 <Typography variant="p" fontWeight={"400"} fontSize={"14px"}>
                   {item.Text}
@@ -183,8 +185,7 @@ export const Product = ({ Content }) => {
                 </Box>
                 <Box
                   borderBottom={"1px solid #ccc"}
-                  position={"relative"}
-                  height={"10px"}
+                  height={'8px'}
                   width={"100px"}
                   mt={"10px"}
                 >
@@ -193,7 +194,7 @@ export const Product = ({ Content }) => {
                     fontWeight={"400"}
                     fontSize={"13px"}
                     ml={"2px"}
-                    position={"absolute"}
+                    sx={{mt:"-20px"}}
                   >
                     {item.OldPrise}
                   </Typography>
@@ -217,6 +218,7 @@ export const Product = ({ Content }) => {
                       borderRadius: "50%",
                       color: "#000",
                       padding: "10px 10px",
+                      zIndex:"100"
             
                     }}
                   >

@@ -18,10 +18,18 @@ export const Sorted = () => {
   };
 
   let itemLocal = (item, index) => {
-
+    if (localStorage.getItem("korzinaProduct")) {
+      let a = JSON.parse(localStorage.getItem("korzinaProduct"));
+      a.push(item);
+      localStorage.setItem("korzinaProduct", JSON.stringify(a));
+    } else {
+      localStorage.setItem("korzinaProduct", JSON.stringify([]));
+      let b = JSON.parse(localStorage.getItem("korzinaProduct"));
+      b.push(item);
+      localStorage.setItem("korzinaProduct", JSON.stringify(b));
+    }
   };
 
-  let itemSort = () => {};
 
   let navigate = useNavigate();
 

@@ -1,17 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-
 import { useParams } from "react-router-dom";
-
-// {Content[contentId - 1].Name}
 
 export const ItemProduct = ({ Content }) => {
   let { contentId } = useParams();
-  console.log(contentId);
+
 
   let [counter, setCounter] = useState(0);
   let [on, setOne] = useState(true);
+  let [images,setImages] = useState(Content[contentId-1].Img)
 
   const PluseBtn = () => {
     counter++;
@@ -27,6 +25,38 @@ export const ItemProduct = ({ Content }) => {
       setOne(on);
     }
   };
+
+  const itemLocal = ()=>{
+    if (localStorage.getItem("ItemProduct")){
+      let a = JSON.parse(localStorage.getItem("ItemProduct"))
+      a.push(Content[contentId]-1)
+      localStorage.setItem('ItemProduct',JSON.stringify(a))
+    }else {
+      localStorage.setItem("ItemProduct",JSON.stringify([]))
+      let b = JSON.parse(localStorage.getItem("ItemProduct"))
+      b.push(Content[contentId]-1)
+      localStorage.setItem('ItemProduct',JSON.stringify(b))
+    }
+  }
+
+  const ImgList = (Content)=>{
+    images=Content[contentId-1].Img
+    setImages(images)
+  
+  }
+
+  const ImgList2 = (Content)=>{
+    images=Content[contentId-1].Img2
+    setImages(images)
+  }
+  const ImgList3 = (Content)=>{
+    images=Content[contentId-1].Img3
+    setImages(images)
+  }
+  const ImgList4 = (Content)=>{
+    images=Content[contentId-1].Img4
+    setImages(images)
+  }
 
   return (
     <Box
@@ -50,22 +80,22 @@ export const ItemProduct = ({ Content }) => {
         </Box>
         <Box display={"flex"}>
           <Box display={"flex"} justifyContent={"flex-start"} gap={"10px"}>
-            <Box display={"flex"} flexDirection={"column"}>
-              <Box>
+            <Box display={"flex"} flexDirection={"column"} gap={'10px'}>
+              <Button onClick={()=>ImgList(Content)} sx={{padding:"0px 0px"}}>
                 <img src={Content[contentId - 1].Img} alt="" width={"90px"} />
-              </Box>
-              <Box>
+              </Button>
+              <Button onClick={()=>ImgList2(Content)} sx={{padding:"0px 0px"}}>
                 <img src={Content[contentId - 1].Img2} alt="" width={"90px"} />
-              </Box>
-              <Box>
+              </Button>
+              <Button onClick={()=>ImgList3(Content)} sx={{padding:"0px 0px"}}>
                 <img src={Content[contentId - 1].Img3} alt="" width={"90px"} />
-              </Box>
-              <Box>
+              </Button>
+              <Button onClick={()=>ImgList4(Content)} sx={{padding:"0px 0px"}}>
                 <img src={Content[contentId - 1].Img4} alt="" width={"90px"} />
-              </Box>
+              </Button>
             </Box>
             <Box>
-              <img src={Content[contentId - 1].Img} alt="" width={'400px'}/>
+              <img src={images} alt="" width={'400px'}/>
             </Box>
           </Box>
           <Box flexDirection={"column"} ml={"100px"}>
@@ -242,6 +272,7 @@ export const ItemProduct = ({ Content }) => {
             </Box>
             <Box mt={"10px"}>
               <Button
+              onClick={()=>itemLocal(contentId.length)}
                 variant="contained"
                 sx={{
                   padding: "20px 60px",
