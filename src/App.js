@@ -34,6 +34,28 @@ import Esty from "./Components/Images/Esty.jpg";
 import Esty2 from "./Components/Images/Esty2.jpg";
 import Esty3 from "./Components/Images/Esty3.jpg";
 import Esty4 from "./Components/Images/Esty4.jpg";
+import Bushra from './Components/Images/Bushra.jpg'
+import Bushra2 from './Components/Images/Bushra2.jpg'
+import Bushra3 from './Components/Images/Bushra3.jpg'
+import Bushra4 from './Components/Images/Bushra4.jpg'
+import Pots from './Components/Images/Pots.jpg'
+import Pots2 from './Components/Images/Pots2.jpg'
+import Pots3 from './Components/Images/Pots3.jpg'
+import Pots4 from './Components/Images/Pots4.jpg'
+import Shvabra from './Components/Images/Shvabra.jpg'
+import Shvabra2 from './Components/Images/Shvabra2.jpg'
+import Shvabra3 from './Components/Images/Shvabra3.jpg'
+import Shvabra4 from './Components/Images/Shvabra4.jpg'
+import Korm from './Components/Images/Korm.jpg'
+import Korm2 from './Components/Images/Korm2.jpg'
+import Korm3 from './Components/Images/Korm3.jpg'
+import Xvost from './Components/Images/Xvost.jpg'
+import Xvost2 from './Components/Images/Xvost2.jpg'
+import Xvost3 from './Components/Images/Xvost3.jpg'
+import Vivo from './Components/Images/Vivo.jpg'
+import Vivo2 from './Components/Images/Vivo2.jpg'
+import Vivo3 from './Components/Images/Vivo3.jpg'
+import Vivo4 from './Components/Images/Vivo4.jpg'
 
 // import { useEffect } from "react";
 
@@ -43,7 +65,7 @@ function ProductItems(
   defImg,
   Text,
   StarT,
-  Amount,
+  Qolgani,
   Credit,
   OldPrise,
   NewPrise,
@@ -58,7 +80,7 @@ function ProductItems(
     defImg,
     Text,
     StarT,
-    Amount,
+    Qolgani,
     Credit,
     OldPrise,
     NewPrise,
@@ -161,7 +183,7 @@ let Content = [
     Kross4
   ),
   ProductItems(
-    6,
+    7,
     "Esty",
     Esty,
     "Qog'oz salfetkalar Esty, 23 х 24 sm, 100 dona",
@@ -176,34 +198,124 @@ let Content = [
     Esty4
   ),
   ProductItems(
-    6,
-    "",
-    Kross,
-    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    8,
+    "Bushra",
+    Bushra,
+    "Tana uchun sprey Naseem Bushra Water Perfume, 100 ml",
     "5.0 (65 baho)",
-    "Sotuvda 154 dona bor",
-    " 1 820 so'm/oyiga",
-    "1 250 000 so'm",
-    "175 000 so'm",
-    Kross,
-    Kross2,
-    Kross3,
-    Kross4
+    "Sotuvda 197 dona bor",
+    " 8 450 so'm/oyiga",
+    "170 000 so'm",
+    "65 000 so'm",
+    Bushra,
+    Bushra2,
+    Bushra3,
+    Bushra4
   ),
   ProductItems(
-    6,
-    "Oil",
-    Kross,
-    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
-    "5.0 (65 baho)",
+    9,
+    "Pots",
+    Pots,
+    "Simsiz quloqchinlar Xiaomi Redmi Buds 3 Lite Black",
+    "5.0 (195 baho)",
     "Sotuvda 154 dona bor",
-    " 1 820 so'm/oyiga",
-    "1 250 000 so'm",
-    "175 000 so'm",
-    Kross,
-    Kross2,
-    Kross3,
-    Kross4
+    "23 760 so'm/oyiga",
+    "301 000 so'm",
+    "198 000 so'm",
+    Pots,
+    Pots2,
+    Pots3,
+    Pots4
+  ),
+  ProductItems(
+    10,
+    "Shvabra komp",
+    Shvabra,
+    "Tozalash uchun to'plam Vileda Super Mocio Completo 1+1",
+    "5.0 (15 baho)",
+    "Sotuvda 14 dona bor",
+    "20 880  so'm/oyiga",
+    "183 000 so'm",
+    "174 000 so'm so'm",
+    Shvabra,
+    Shvabra2,
+    Shvabra3,
+    Shvabra4
+  ),
+  ProductItems(
+    11,
+    "Korm",
+    Korm,
+    "Barcha zotlarning katta itlari uchun quruq ovqat ProBalance,",
+    "5.0 (25 baho)",
+    "Sotuvda 54 dona bor",
+    "13 560 so'm/oyiga",
+    "195 000 so'm",
+    "113 000 so'm",
+    Korm,
+    Korm2,
+    Korm3,
+    Korm
+  ),
+  ProductItems(
+    12,
+    "Xvost",
+    Xvost,
+    "SSousdagi baliqli konservalangan mushuk ovqati, 85 g, 02 PH 162",
+    "5.0 (195 baho)",
+    "Sotuvda 477 dona bor",
+    "480 so'm/oyiga",
+    "6 000 so'm",
+    "4 000 so'm",
+    Xvost,
+    Xvost2,
+    Xvost3,
+    Xvost
+  ),
+  ProductItems(
+    13,
+    "Vivo",
+    Vivo,
+    "Simsiz quloqchinlar Vivo Wireless Sport Lite",
+    "5.0 (195 baho)",
+    "Sotuvda 477 dona bor",
+    "480 so'm/oyiga",
+    "6 000 so'm",
+    "4 000 so'm",
+    Vivo,
+    Vivo2,
+    Vivo3,
+    Vivo4
+  ),
+  ProductItems(
+    12,
+    "Xvost",
+    Xvost,
+    "SSousdagi baliqli konservalangan mushuk ovqati, 85 g, 02 PH 162",
+    "5.0 (195 baho)",
+    "Sotuvda 477 dona bor",
+    "480 so'm/oyiga",
+    "6 000 so'm",
+    "4 000 so'm",
+    Xvost,
+    Xvost2,
+    Xvost3,
+    Xvost
+  ),
+  ProductItems(
+    12,
+    "Xvost",
+    Xvost,
+    "SSousdagi baliqli konservalangan mushuk ovqati, 85 g, 02 PH 162",
+    "5.0 (195 baho)",
+    "Sotuvda 477 dona bor",
+    "480 so'm/oyiga",
+    "6 000 so'm",
+    "4 000 so'm",
+    Xvost,
+    Xvost2,
+    Xvost3,
+    Xvost
   ),
 ];
 

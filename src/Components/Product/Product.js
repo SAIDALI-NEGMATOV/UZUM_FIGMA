@@ -8,7 +8,7 @@ export const Product = ({ Content }) => {
 
   let itemProduct = (item) => {
     navigate("/components/" + item.Id);
-    console.log(item);
+    // console.log(item);
   };
 
   let itemLocal = (item) => {

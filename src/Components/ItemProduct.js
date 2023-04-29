@@ -94,7 +94,7 @@ export const ItemProduct = ({ Content }) => {
                 <img src={Content[contentId - 1].Img4} alt="" width={"90px"} />
               </Button>
             </Box>
-            <Box>
+            <Box display={'flex'} justifyContent={'center'} >
               <img src={images} alt="" width={'400px'}/>
             </Box>
           </Box>
@@ -197,7 +197,7 @@ export const ItemProduct = ({ Content }) => {
                 </Box>
                 <Box mt={"22px"}>
                   <Typography variant="p" fontSize={"20px"} color={"#7000ff"}>
-                    {Content[contentId].Amount}
+                    {Content[contentId-1].Qolgani}
                   </Typography>
                 </Box>
               </Box>
@@ -212,15 +212,16 @@ export const ItemProduct = ({ Content }) => {
               <Box
                 borderBottom={"1px solid #c1c1c1"}
                 width={"140px"}
-                height={"30px"}
+                height={"8px"}
+                display={"flex"}
+                justifyContent={'center'}
+                
                 position={"relative"}
-                mt={"-10px"}
+                mt={"5px"}
                 ml={"15px"}
               >
                 <Typography
                   variant="p"
-                  position={"absolute"}
-                  top={"18px"}
                   fontSize={"15px"}
                   fontWeight={"400"}
                 >
