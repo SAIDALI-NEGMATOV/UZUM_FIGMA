@@ -1,15 +1,24 @@
+/* eslint-disable no-lone-blocks */
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 export const Basket = () => {
   let [counter, setCounter] = useState(0);
   let [on, setOne] = useState(true);
+  let [oldPrice, setOldPrice] = useState(0);
+  let [newPrice, setNewPrice] = useState(0);
   const [infos, setInfos] = useState(
     localStorage.getItem
       ? JSON.parse(localStorage.getItem("korzinaProduct"))
       : []
   );
+  let [Prices,setPrices] = useState(
+    localStorage.getItem
+    ? JSON.parse(localStorage.getItem("oldPrice"))
+    : []
+    )
+    // console.log(Prices);
 
 
   const PluseBtn = (index) => {
@@ -33,6 +42,21 @@ export const Basket = () => {
     arr.splice(index, 1);
     localStorage.setItem("korzinaProduct", JSON.stringify(arr));
   };
+  useEffect(()=>{
+    // {
+    //   infos.map((item)=>{
+    //     let a = oldPrice
+    //     oldPrice += item.OldPrise
+    //     setOldPrice(a)
+    //     let b = newPrice
+    //     newPrice += item.NewPrise
+    //     setNewPrice(b)
+    //     console.log(b);
+    //   })
+    // }
+  }, [])
+
+  
 
   return (
     <Box
@@ -320,8 +344,38 @@ export const Basket = () => {
                     >
                       <Typography variant="p">Mahsulotlar():</Typography>
                       <Typography>
-                        {/* {item.NewPrise}  */}
-                        0000
+                        {/* {Prices.map((item,index)=>{
+
+                        {item.oldPrice}
+                        })} */}
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       </Typography>
                     </Box>
                     <Box
@@ -349,10 +403,10 @@ export const Basket = () => {
                           fontWeight={"500"}
                           fontSize={"25px"}
                         >
-                          0000
+                          {newPrice}
                         </Typography>
                         <Typography variant="p" color={"#00c853"}>
-                          0000
+                          {oldPrice}
                         </Typography>
                       </Box>
                     </Box>

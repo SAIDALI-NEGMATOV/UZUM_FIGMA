@@ -3,9 +3,30 @@ import React, { useState } from "react";
 import Uzum from "../Images/Uzum.svg";
 import { Link } from "react-router-dom";
 
-export const Search = () => {
+export const Search = ({ Content }) => {
   const [badgeVal, setBadgeVal] = useState(localStorage.getItem("korzinaProduct")?JSON.parse(localStorage.getItem("korzinaProduct")).length:0)
-  console.log(setBadgeVal);
+  // console.log(setBadgeVal);
+  const [infos, setInfos] = useState(
+    localStorage.getItem
+      ? JSON.parse(localStorage.getItem("korzinaProduct"))
+      : []
+  );
+  let [oldPrice, setOldPrice] = useState(0);
+  // let [newPrice, setNewPrice] = useState(0);
+
+  let a = [
+    {Prise:1500}
+  ]
+
+
+  const OnPrise = ()=>{
+    for ( const item of Content){
+      console.log(item.OldPrise);
+      
+    }
+  }
+  // console.log(oldPrice);
+
   return (
     <Box
       display={"flex"}
@@ -143,6 +164,7 @@ export const Search = () => {
             </Link>
             <Link to={"/basket"}>
               <Button
+              onClick={()=>OnPrise}
                 ml="10px"
                 mt="10px"
                 gap={"10px"}

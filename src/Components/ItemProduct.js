@@ -207,7 +207,7 @@ export const ItemProduct = ({ Content }) => {
             </Box>
             <Box display={"flex"}>
               <Typography variant="p" fontSize={"23px"} fontWeight={"600"}>
-                {Content[contentId - 1].NewPrise}
+                {Content[contentId - 1].NewPrise} so'm
               </Typography>
               <Box
                 borderBottom={"1px solid #c1c1c1"}
@@ -225,7 +225,7 @@ export const ItemProduct = ({ Content }) => {
                   fontSize={"15px"}
                   fontWeight={"400"}
                 >
-                  {Content[contentId - 1].OldPrise}
+                  {Content[contentId - 1].OldPrise} so'm
                 </Typography>
               </Box>
               <Button

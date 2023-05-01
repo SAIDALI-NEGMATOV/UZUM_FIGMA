@@ -8,7 +8,7 @@ export const Nav = () => {
       justifyContent={"center"}
       alignItems={"center"}
       flexDirection={"column"}
-      bgcolor={'#f1f1f1'}
+      bgcolor={"#f1f1f1"}
     >
       <Box
         width={"82%"}
@@ -17,7 +17,7 @@ export const Nav = () => {
         alignItems={"center"}
       >
         <Typography variant="i" fontSize={"20px"}>
-          <i class="bx bx-location-plus"></i>
+          <span class="material-symbols-outlined">location_on</span>
         </Typography>
         <Box display={"flex"}>
           <Typography variant="p">Shahar:</Typography>
@@ -42,11 +42,19 @@ export const Nav = () => {
           >
             Uzumda soting
           </Typography>
-          <Typography variant="p" ml='25px' fontWeight={'400'}>Savol-javoblar</Typography>
-          <Typography variant="p" ml='25px' fontWeight={'400'}>Buyurmalarim</Typography>
-          <Box display={'flex'} ml='25px'>
-          <Typography variant="i"><i class='bx bxl-github'></i></Typography>
-          <Typography variant="p" fontWeight={'400'}>O'zbekcha</Typography>
+          <Typography variant="p" ml="25px" fontWeight={"400"}>
+            Savol-javoblar
+          </Typography>
+          <Typography variant="p" ml="25px" fontWeight={"400"}>
+            Buyurmalarim
+          </Typography>
+          <Box display={"flex"} ml="25px">
+            <Typography variant="i">
+              <i class="bx bxl-github"></i>
+            </Typography>
+            <Typography variant="p" fontWeight={"400"}>
+              O'zbekcha
+            </Typography>
           </Box>
         </Box>
       </Box>

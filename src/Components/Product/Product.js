@@ -196,7 +196,7 @@ export const Product = ({ Content }) => {
                     ml={"2px"}
                     sx={{mt:"-20px"}}
                   >
-                    {item.OldPrise}
+                    {item.OldPrise} so'm
                   </Typography>
                 </Box>
                 <Box mt={"10px"} display={"flex"} position={"relative"}>
@@ -206,7 +206,7 @@ export const Product = ({ Content }) => {
                     fontSize={"16px"}
                     mr={"100px"}
                   >
-                    {item.NewPrise}
+                    {item.NewPrise} so'm  
                   </Typography>
                   <Button
                     onClick={() => itemLocal(item, index, Content)}
