@@ -4,7 +4,11 @@ import Uzum from "../Images/Uzum.svg";
 import { Link } from "react-router-dom";
 
 export const Search = ({ Content }) => {
-  const [badgeVal, setBadgeVal] = useState(localStorage.getItem("korzinaProduct")?JSON.parse(localStorage.getItem("korzinaProduct")).length:0)
+  const [badgeVal, setBadgeVal] = useState(
+    localStorage.getItem("korzinaProduct")
+      ? JSON.parse(localStorage.getItem("korzinaProduct")).length
+      : 0
+  );
   // console.log(setBadgeVal);
   const [infos, setInfos] = useState(
     localStorage.getItem
@@ -12,19 +16,25 @@ export const Search = ({ Content }) => {
       : []
   );
   let [oldPrice, setOldPrice] = useState(0);
-  // let [newPrice, setNewPrice] = useState(0);
+  let [newPrice, setNewPrice] = useState(0);
 
-  let a = [
-    {Prise:1500}
-  ]
+  // let a = [
+  //   {Prise:1500}
+  // ]
 
-
-  const OnPrise = ()=>{
-    for ( const item of Content){
+  const OnPrise = () => {
+    infos.forEach((item, index) => {
       console.log(item.OldPrise);
-      
-    }
-  }
+      let a = oldPrice;
+      oldPrice += item.OldPrise;
+      setOldPrice(a);
+      // console.log(oldPrice);
+      let b = newPrice;
+      newPrice += item.NewPrise;
+      setNewPrice(b);
+      console.log(newPrice);
+    });
+  };
   // console.log(oldPrice);
 
   return (
@@ -164,7 +174,7 @@ export const Search = ({ Content }) => {
             </Link>
             <Link to={"/basket"}>
               <Button
-              onClick={()=>OnPrise}
+                onClick={() => OnPrise()}
                 ml="10px"
                 mt="10px"
                 gap={"10px"}

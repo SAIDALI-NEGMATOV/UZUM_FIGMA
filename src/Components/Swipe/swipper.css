@@ -37,9 +37,10 @@
   }
 
   .swiper-button-next{
-    margin-right: 260px;
+    margin-right: 150px;
     color: #ccc;
     border-radius: 50%;
+    margin-top: 5px;
   }
   .swiper-button-prev{
     color: #ccc;
@@ -47,6 +48,7 @@
     background: #A2A2A2; */
     padding: 10px 10px;
     border-radius: 50%;
-    margin-left: 260px;
+    margin-left: 150px;
+    margin-top: 5px;
     z-index: 100;
   }
