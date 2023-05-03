@@ -65,7 +65,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={UzAvto}
                   alt=""
@@ -89,7 +89,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={Leto}
                   alt=""
@@ -113,7 +113,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={Hayit}
                   alt=""
@@ -137,7 +137,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={Color}
                   alt=""
@@ -161,7 +161,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={Uni}
                   alt=""
@@ -185,7 +185,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1225px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1225px"} overflow={"hidden"} borderRadius={"10px"} mr={"30px"}>
                 <img
                   src={Maxi}
                   alt=""
@@ -209,7 +209,7 @@ let Swipe = () => {
               alignItems={"center"}
               mt="20px"
             >
-              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"}>
+              <Box width={"1500px"} overflow={"hidden"} borderRadius={"10px"} ml={'30px'}>
                 <img
                   src={Live}
                   alt=""

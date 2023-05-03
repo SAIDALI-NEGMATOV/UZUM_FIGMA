@@ -15,27 +15,48 @@ export const Search = ({ Content }) => {
       ? JSON.parse(localStorage.getItem("korzinaProduct"))
       : []
   );
-  let [oldPrice, setOldPrice] = useState(0);
-  let [newPrice, setNewPrice] = useState(0);
 
-  // let a = [
-  //   {Prise:1500}
-  // ]
+  // let [oldPrice, setOldPrice] = useState(0);
+  // let [newPrice, setNewPrice] = useState(0);
+  // console.log(oldPrice);
+
+  
 
   const OnPrise = () => {
+    let oldPrice = 0
+    let newPrice = 0
     infos.forEach((item, index) => {
-      console.log(item.OldPrise);
-      let a = oldPrice;
-      oldPrice += item.OldPrise;
-      setOldPrice(a);
-      // console.log(oldPrice);
-      let b = newPrice;
+      // console.log(item.OldPrise);
+      oldPrice += item.OldPrise
+      // let a = oldPrice;
+      // setOldPrice(a);
       newPrice += item.NewPrise;
-      setNewPrice(b);
-      console.log(newPrice);
+      // let b = newPrice;
+      // setNewPrice(b);
+      // console.log(newPrice);
+      if (localStorage.getItem("OldPrise")){
+        // let c = JSON.parse(localStorage.getItem("OldPrise"))
+        // c.push(oldPrice)
+        localStorage.setItem('OldPrise',JSON.stringify(oldPrice))
+      }else {
+        localStorage.setItem("OldPrise",JSON.stringify(0))
+        let d = JSON.parse(localStorage.getItem('OldPrise'))
+        d = oldPrice
+        localStorage.setItem("OldPrise",JSON.stringify(d))
+      };
+      if (localStorage.getItem("NewPrise")){
+        // let f = JSON.parse(localStorage.getItem("NewPrise"))
+        // f.push(newPrice)
+        localStorage.setItem('NewPrise',JSON.stringify(newPrice))
+      }else {
+        localStorage.setItem("NewPrise",JSON.stringify(0))
+        let g = JSON.parse(localStorage.getItem('NewPrise'))
+        g = newPrice
+        localStorage.setItem("NewPrise",JSON.stringify(g))
+      };
     });
+
   };
-  // console.log(oldPrice);
 
   return (
     <Box

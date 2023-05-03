@@ -15,7 +15,7 @@ export const Navigation = () => {
         justifyContent={"flex-start"}
         alignItems={"center"}
         mt="20px"
-        gap={"20px"}
+        gap={"27.5px"}
         overflow={"hidden"}
       >
         <Box>

@@ -2,27 +2,29 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router";
 
-export const Basket = () => {
-  let [counter, setCounter] = useState(0);
+export const Basket = ({Content}) => {
+  let { contentId } = useParams();
+
+  let [counter, setCounter] = useState(1);
   let [on, setOne] = useState(true);
-  let [oldPrice, setOldPrice] = useState(0);
-  let [newPrice, setNewPrice] = useState(0);
+  // let [oldPrice, setOldPrice] = useState(0);
+  // let [newPrice, setNewPrice] = useState(0);
   const [infos, setInfos] = useState(
     localStorage.getItem
       ? JSON.parse(localStorage.getItem("korzinaProduct"))
       : []
   );
-  let [Prices,setPrices] = useState(
-    localStorage.getItem
-    ? JSON.parse(localStorage.getItem("oldPrice"))
-    : []
-    )
-    // console.log(Prices);
-
+  let [Prices, setPrices] = useState(
+    localStorage.getItem ? JSON.parse(localStorage.getItem("OldPrise")) : []
+  );
+  let [newPrice, setNewprices] = useState(
+    localStorage.getItem ? JSON.parse(localStorage.getItem("NewPrise")) : []
+  );
 
   const PluseBtn = (index) => {
-    setInfos(infos)
+    setInfos(infos);
     counter++;
     setCounter(counter);
     on = false;
@@ -31,7 +33,7 @@ export const Basket = () => {
   const MinuseBtn = () => {
     counter--;
     setCounter(counter);
-    if (counter === 0) {
+    if (counter === 1) {
       on = true;
       setOne(on);
     }
@@ -42,7 +44,7 @@ export const Basket = () => {
     arr.splice(index, 1);
     localStorage.setItem("korzinaProduct", JSON.stringify(arr));
   };
-  useEffect(()=>{
+  useEffect(() => {
     // {
     //   infos.map((item)=>{
     //     let a = oldPrice
@@ -54,9 +56,7 @@ export const Basket = () => {
     //     console.log(b);
     //   })
     // }
-  }, [])
-
-  
+  }, []);
 
   return (
     <Box
@@ -76,12 +76,12 @@ export const Basket = () => {
         gap={"5px"}
       >
         <Box>
-          <Box width={"100%"} marginTop={"40px"} display={"flex"}>
-            <Typography variant="h4">Savatingiz,</Typography>
-            <Typography variant="h4" sx={{ opacity: ".54" }}>
-              {}
+          <Box width={"100%"} marginTop={"30px"} mb='20px' display={"flex"}>
+            <Typography variant="h6">Savatingiz,</Typography>
+            <Typography variant="h6" sx={{ opacity: ".54" }} mr="5px" ml="5px">
+              {infos.length}
             </Typography>
-            <Typography variant="h4" sx={{ opacity: ".54" }}>
+            <Typography variant="h6" sx={{ opacity: ".54" }}>
               mahsulot
             </Typography>
           </Box>
@@ -122,8 +122,8 @@ export const Basket = () => {
                     </Button>
                   </Box>
                 </Box>
-                {infos.length === 0
-                  ? ""
+                {infos.length == 0
+                  ? []
                   : infos.map((item, index) => (
                       <Box key={index} borderTop={"1px solid #C2C2C2"}>
                         <Box display={"flex"} padding={"20px"}>
@@ -247,7 +247,7 @@ export const Basket = () => {
                                   fontWeight={"600"}
                                 >
                                   {" "}
-                                  {item.NewPrise}
+                                  {item.NewPrise} so"m
                                 </Typography>
                               </Box>
                               <Box
@@ -258,7 +258,7 @@ export const Basket = () => {
                               >
                                 <Typography fontSize={"14px"} mt={"-12px"}>
                                   {" "}
-                                  {item.OldPrise}
+                                  {item.OldPrise} so'm
                                 </Typography>
                               </Box>
                             </Box>
@@ -342,41 +342,11 @@ export const Basket = () => {
                       gap={"80px"}
                       sx={{ opacity: "0.80" }}
                     >
-                      <Typography variant="p">Mahsulotlar():</Typography>
-                      <Typography>
-                        {/* {Prices.map((item,index)=>{
-
-                        {item.oldPrice}
-                        })} */}
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      <Typography variant="p">
+                        Mahsulotlar({infos.length}):
                       </Typography>
+
+                      <Typography fontSize={"14px"}>{newPrice} so'm</Typography>
                     </Box>
                     <Box
                       display={"flex"}
@@ -397,16 +367,19 @@ export const Basket = () => {
                       mt={"15px"}
                     >
                       <Typography variant="p">Jami:</Typography>
-                      <Box flexDirection={"column"} display={"flex"}>
+
+                      <Box flexDirection={"column"} display={"flex"} justifyContent={'flex-end'} alignItems={'flex-end'}>
                         <Typography
                           variant="p"
-                          fontWeight={"500"}
-                          fontSize={"25px"}
+                          fontWeight={"600"}
+                          fontSize={"18px"}
                         >
-                          {newPrice}
+                          {newPrice} so'm
+                          {}
                         </Typography>
-                        <Typography variant="p" color={"#00c853"}>
-                          {oldPrice}
+
+                        <Typography variant="p" fontSize={'14px'} color={"#00c853"}>
+                          Tejovingiz: {Prices - newPrice} so'm
                         </Typography>
                       </Box>
                     </Box>

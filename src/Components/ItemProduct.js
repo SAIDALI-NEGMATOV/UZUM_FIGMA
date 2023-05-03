@@ -7,7 +7,7 @@ export const ItemProduct = ({ Content }) => {
   let { contentId } = useParams();
 
 
-  let [counter, setCounter] = useState(0);
+  let [counter, setCounter] = useState(1);
   let [on, setOne] = useState(true);
   let [images,setImages] = useState(Content[contentId-1].Img)
 
@@ -20,13 +20,13 @@ export const ItemProduct = ({ Content }) => {
   const MinuseBtn = () => {
     counter--;
     setCounter(counter);
-    if (counter === 0) {
+    if (counter === 1) {
       on = true;
       setOne(on);
     }
   };
 
-  const itemLocal = ()=>{
+  const itemLocal = (Content)=>{
     if (localStorage.getItem("ItemProduct")){
       let a = JSON.parse(localStorage.getItem("ItemProduct"))
       a.push(Content[contentId]-1)
