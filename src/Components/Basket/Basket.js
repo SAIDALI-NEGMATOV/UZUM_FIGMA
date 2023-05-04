@@ -1,10 +1,10 @@
 /* eslint-disable no-lone-blocks */
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Checkbox, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
 
-export const Basket = ({Content}) => {
+export const Basket = ({ Content }) => {
   let { contentId } = useParams();
 
   let [counter, setCounter] = useState(1);
@@ -22,6 +22,13 @@ export const Basket = ({Content}) => {
   let [newPrice, setNewprices] = useState(
     localStorage.getItem ? JSON.parse(localStorage.getItem("NewPrise")) : []
   );
+  let [active, setActive] = useState(true);
+
+
+  const Check =()=>{
+    active = !active
+    setActive(active  )
+  }
 
   const PluseBtn = (index) => {
     setInfos(infos);
@@ -76,7 +83,7 @@ export const Basket = ({Content}) => {
         gap={"5px"}
       >
         <Box>
-          <Box width={"100%"} marginTop={"30px"} mb='20px' display={"flex"}>
+          <Box width={"100%"} marginTop={"30px"} mb="20px" display={"flex"}>
             <Typography variant="h6">Savatingiz,</Typography>
             <Typography variant="h6" sx={{ opacity: ".54" }} mr="5px" ml="5px">
               {infos.length}
@@ -101,6 +108,8 @@ export const Basket = ({Content}) => {
                   <Box mt="8px" display={"flex"}>
                     <input
                       type="checkbox"
+                      onChange={()=>Check()}
+                      defaultChecked={active}
                       style={{ width: "20px", height: "20px" }}
                     />
                     <Typography variant="p" ml={"10px"}>
@@ -135,6 +144,7 @@ export const Basket = ({Content}) => {
                               mr="10px"
                             >
                               <input
+                                defaultChecked={active}
                                 type="checkbox"
                                 style={{ width: "20px", height: "20px" }}
                               />
@@ -247,7 +257,7 @@ export const Basket = ({Content}) => {
                                   fontWeight={"600"}
                                 >
                                   {" "}
-                                  {item.NewPrise} so"m
+                                  {item.NewPrise} so'm
                                 </Typography>
                               </Box>
                               <Box
@@ -368,7 +378,12 @@ export const Basket = ({Content}) => {
                     >
                       <Typography variant="p">Jami:</Typography>
 
-                      <Box flexDirection={"column"} display={"flex"} justifyContent={'flex-end'} alignItems={'flex-end'}>
+                      <Box
+                        flexDirection={"column"}
+                        display={"flex"}
+                        justifyContent={"flex-end"}
+                        alignItems={"flex-end"}
+                      >
                         <Typography
                           variant="p"
                           fontWeight={"600"}
@@ -378,7 +393,11 @@ export const Basket = ({Content}) => {
                           {}
                         </Typography>
 
-                        <Typography variant="p" fontSize={'14px'} color={"#00c853"}>
+                        <Typography
+                          variant="p"
+                          fontSize={"14px"}
+                          color={"#00c853"}
+                        >
                           Tejovingiz: {Prices - newPrice} so'm
                         </Typography>
                       </Box>

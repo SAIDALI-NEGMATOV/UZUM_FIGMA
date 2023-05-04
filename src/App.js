@@ -56,6 +56,14 @@ import Vivo from './Components/Images/Vivo.jpg'
 import Vivo2 from './Components/Images/Vivo2.jpg'
 import Vivo3 from './Components/Images/Vivo3.jpg'
 import Vivo4 from './Components/Images/Vivo4.jpg'
+import ImgSw from './Components/Images/Promo.jpg'
+import UzAvto from './Components/Images/UzAvto.jpg'
+import Hayit from './Components/Images/Hayit.jpg'
+import Leto from './Components/Images/Leto.jpg'
+import Color from './Components/Images/Color.jpg'
+import Uni from './Components/Images/Uni.jpg'
+import Maxi from './Components/Images/Maxi.jpg'
+import Live from './Components/Images/Live.jpg'
 
 // import { useEffect } from "react";
 
@@ -175,8 +183,8 @@ let Content = [
     "5.0 (65 baho)",
     "Sotuvda 154 dona bor",
     " 1 820 so'm/oyiga",
-    125000,
     175000,
+    125000,
     Kross,
     Kross2,
     Kross3,
@@ -319,6 +327,51 @@ let Content = [
   ),
 ];
 
+function Swiper(
+  Id,
+  SwImg
+){
+  return{
+    Id,
+    SwImg
+  }
+}
+
+let SSwipe = [
+  Swiper(
+    1,
+    ImgSw
+    ),
+  Swiper(
+    2,
+    UzAvto
+    ),
+  Swiper(
+    3,
+    Hayit
+    ),
+  Swiper(
+    4,
+    Leto
+    ),
+  Swiper(
+    5,
+    Color
+    ),
+  Swiper(
+    6,
+    Uni
+    ),
+  Swiper(
+    7,
+    Maxi
+    ),
+  Swiper(
+    7,
+    Live
+    ),
+]
+
 
 
 
@@ -329,7 +382,7 @@ function App() {
       <Search Content={Content}/>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Components Content={Content} />} />
+        <Route path="/" element={<Components Content={Content} SSwipe={SSwipe} />} />
         <Route
           path="/components/:contentId"
           element={<ItemProduct Content={Content} />}

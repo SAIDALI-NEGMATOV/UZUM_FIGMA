@@ -16,11 +16,17 @@ export const Search = ({ Content }) => {
       : []
   );
 
+  // let {sign,setSign}=useState([
+  //   {
+  //     Text:"salom",
+  //     Sms:"",
+  //   }
+  // ])
+
   // let [oldPrice, setOldPrice] = useState(0);
   // let [newPrice, setNewPrice] = useState(0);
   // console.log(oldPrice);
 
-  
 
   const OnPrise = () => {
     let oldPrice = 0
@@ -143,6 +149,7 @@ export const Search = ({ Content }) => {
               mt="10px"
               gap={"10px"}
               display={"flex"}
+              // onClick={()=>SignUp()}
               sx={[
                 { bgcolor: "#fff", color: "#000", padding: "0px 10px" },
                 { hover: { bgcolor: "#ccc" } },

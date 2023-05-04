@@ -38,17 +38,25 @@
 
   .swiper-button-next{
     margin-right: 180px;
-    color: #ccc;
+    color: #454545;
     border-radius: 50%;
     margin-top: 5px;
+    background-color: #cccccc8b;
+    padding: 30px 30px;
+    
   }
+
+
+
   .swiper-button-prev{
-    color: #ccc;
+    color: #454545fd;
     /* border:1px solid rgba(118,121,127,0.3);
     background: #A2A2A2; */
-    padding: 10px 10px;
     border-radius: 50%;
     margin-left: 150px;
     margin-top: 5px;
     z-index: 100;
+    background-color: #cccccc8b;
+    padding: 30px 30px;
+    
   }

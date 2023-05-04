@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
@@ -26,16 +27,16 @@ export const ItemProduct = ({ Content }) => {
     }
   };
 
-  const itemLocal = (Content)=>{
-    if (localStorage.getItem("ItemProduct")){
-      let a = JSON.parse(localStorage.getItem("ItemProduct"))
-      a.push(Content[contentId]-1)
-      localStorage.setItem('ItemProduct',JSON.stringify(a))
+  const itemLocal = ()=>{
+    if (localStorage.getItem("karzinaProduct")){
+      let a = JSON.parse(localStorage.getItem("karzinaProduct"))
+      a.push(Content[contentId-1])
+      localStorage.setItem('karzinaProduct',JSON.stringify(a))
     }else {
-      localStorage.setItem("ItemProduct",JSON.stringify([]))
-      let b = JSON.parse(localStorage.getItem("ItemProduct"))
-      b.push(Content[contentId]-1)
-      localStorage.setItem('ItemProduct',JSON.stringify(b))
+      localStorage.setItem("karzinaProduct",JSON.stringify([]))
+      let b = JSON.parse(localStorage.getItem("karzinaProduct"))
+      b.push(Content[contentId-1])
+      localStorage.setItem('karzinaProduct',JSON.stringify(b))
     }
   }
 
