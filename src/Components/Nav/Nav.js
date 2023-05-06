@@ -26,10 +26,10 @@ export const Nav = () => {
               Toshkent
             </Typography>
           </Box>
-          <Typography variant="p" ml="20px" fontWeight={"500"}>
+          <Typography variant="p" ml="40px" fontWeight={"500"}>
             Topshiriq punkutlari
           </Typography>
-          <Typography variant="p" ml="50px" fontWeight={"400"} color={"#444"}>
+          <Typography variant="p" ml="100px" fontWeight={"400"} color={"#444"}>
             Buyurtmangiz 1 kunda yetkazib beramiz!
           </Typography>
           <Typography
@@ -42,13 +42,13 @@ export const Nav = () => {
           >
             Uzumda soting
           </Typography>
-          <Typography variant="p" ml="25px" fontWeight={"400"}>
+          <Typography variant="p" ml="40px" fontWeight={"400"}>
             Savol-javoblar
           </Typography>
-          <Typography variant="p" ml="25px" fontWeight={"400"}>
+          <Typography variant="p" ml="35px" fontWeight={"400"}>
             Buyurmalarim
           </Typography>
-          <Box display={"flex"} ml="25px">
+          <Box display={"flex"} ml="35px">
             <Typography variant="i">
               <i class="bx bxl-github"></i>
             </Typography>

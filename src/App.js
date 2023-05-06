@@ -34,36 +34,39 @@ import Esty from "./Components/Images/Esty.jpg";
 import Esty2 from "./Components/Images/Esty2.jpg";
 import Esty3 from "./Components/Images/Esty3.jpg";
 import Esty4 from "./Components/Images/Esty4.jpg";
-import Bushra from './Components/Images/Bushra.jpg'
-import Bushra2 from './Components/Images/Bushra2.jpg'
-import Bushra3 from './Components/Images/Bushra3.jpg'
-import Bushra4 from './Components/Images/Bushra4.jpg'
-import Pots from './Components/Images/Pots.jpg'
-import Pots2 from './Components/Images/Pots2.jpg'
-import Pots3 from './Components/Images/Pots3.jpg'
-import Pots4 from './Components/Images/Pots4.jpg'
-import Shvabra from './Components/Images/Shvabra.jpg'
-import Shvabra2 from './Components/Images/Shvabra2.jpg'
-import Shvabra3 from './Components/Images/Shvabra3.jpg'
-import Shvabra4 from './Components/Images/Shvabra4.jpg'
-import Korm from './Components/Images/Korm.jpg'
-import Korm2 from './Components/Images/Korm2.jpg'
-import Korm3 from './Components/Images/Korm3.jpg'
-import Xvost from './Components/Images/Xvost.jpg'
-import Xvost2 from './Components/Images/Xvost2.jpg'
-import Xvost3 from './Components/Images/Xvost3.jpg'
-import Vivo from './Components/Images/Vivo.jpg'
-import Vivo2 from './Components/Images/Vivo2.jpg'
-import Vivo3 from './Components/Images/Vivo3.jpg'
-import Vivo4 from './Components/Images/Vivo4.jpg'
-import ImgSw from './Components/Images/Promo.jpg'
-import UzAvto from './Components/Images/UzAvto.jpg'
-import Hayit from './Components/Images/Hayit.jpg'
-import Leto from './Components/Images/Leto.jpg'
-import Color from './Components/Images/Color.jpg'
-import Uni from './Components/Images/Uni.jpg'
-import Maxi from './Components/Images/Maxi.jpg'
-import Live from './Components/Images/Live.jpg'
+import Bushra from "./Components/Images/Bushra.jpg";
+import Bushra2 from "./Components/Images/Bushra2.jpg";
+import Bushra3 from "./Components/Images/Bushra3.jpg";
+import Bushra4 from "./Components/Images/Bushra4.jpg";
+import Pots from "./Components/Images/Pots.jpg";
+import Pots2 from "./Components/Images/Pots2.jpg";
+import Pots3 from "./Components/Images/Pots3.jpg";
+import Pots4 from "./Components/Images/Pots4.jpg";
+import Shvabra from "./Components/Images/Shvabra.jpg";
+import Shvabra2 from "./Components/Images/Shvabra2.jpg";
+import Shvabra3 from "./Components/Images/Shvabra3.jpg";
+import Shvabra4 from "./Components/Images/Shvabra4.jpg";
+import Korm from "./Components/Images/Korm.jpg";
+import Korm2 from "./Components/Images/Korm2.jpg";
+import Korm3 from "./Components/Images/Korm3.jpg";
+import Xvost from "./Components/Images/Xvost.jpg";
+import Xvost2 from "./Components/Images/Xvost2.jpg";
+import Xvost3 from "./Components/Images/Xvost3.jpg";
+import Vivo from "./Components/Images/Vivo.jpg";
+import Vivo2 from "./Components/Images/Vivo2.jpg";
+import Vivo3 from "./Components/Images/Vivo3.jpg";
+import Vivo4 from "./Components/Images/Vivo4.jpg";
+import ImgSw from "./Components/Images/Promo.jpg";
+import UzAvto from "./Components/Images/UzAvto.jpg";
+import Hayit from "./Components/Images/Hayit.jpg";
+import Leto from "./Components/Images/Leto.jpg";
+import Color from "./Components/Images/Color.jpg";
+import Uni from "./Components/Images/Uni.jpg";
+import Maxi from "./Components/Images/Maxi.jpg";
+import Live from "./Components/Images/Live.jpg";
+import Afisha from "./Components/Images/Afisha.jpg";
+import KeeSh from './Components/Images/Keshback.jpg'
+import { End } from "./Components/End/End";
 
 // import { useEffect } from "react";
 
@@ -325,64 +328,253 @@ let Content = [
     Xvost3,
     Xvost
   ),
+  ProductItems(
+    1,
+    "Sofia Oil",
+    Oill,
+    "Kungaboqar yog'i Sofia tozalangan va deodorizatsiyalangan, 1 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 1 820 so'm/oyiga",
+    19000,
+    14000,
+    Oill,
+    Oill2,
+    Oill3,
+    Oill4
+  ),
+  ProductItems(
+    2,
+    "Tide",
+    Tide,
+    "Kir yuvish kukuni Tide Color, Lenor Touch, avtomat, 3 kg",
+    "4.9 (406 baho)",
+    "Oxirgisi qoldi!",
+    " 1 820 so'm/oyiga",
+    19000,
+    14000,
+    Tide,
+    Tide2,
+    Tide3,
+    Tide4
+  ),
+  ProductItems(
+    3,
+    "Prela",
+    Prela,
+    "Tagliklar Perla Twin 42 dona + Perla Kids nam salfetkalari, 15 dona sovg'a",
+    "5.0 (10 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    "6 840 so'm/oyiga",
+    70000,
+    57000,
+    Prela,
+    Prela2,
+    Prela,
+    Salfetka
+  ),
+  ProductItems(
+    4,
+    "Xurmo",
+    Xurmo,
+    "Xurmo Date Bam, 650 g + gazlangan ichimlik Pepsi, 260 ml",
+    "5.0 (65 baho)",
+    "Sotuvda 208 dona bor",
+    " 2 640 so'm/oyiga",
+    26000,
+    22000,
+    Xurmo,
+    Xurmo,
+    Xurmo2,
+    Xurmo3
+  ),
+  ProductItems(
+    10,
+    "Shvabra komp",
+    Shvabra,
+    "Tozalash uchun to'plam Vileda Super Mocio Completo 1+1",
+    "5.0 (15 baho)",
+    "Sotuvda 14 dona bor",
+    "20 880  so'm/oyiga",
+    183000,
+    174000,
+    Shvabra,
+    Shvabra2,
+    Shvabra3,
+    Shvabra4
+  ),
 ];
 
-function Swiper(
-  Id,
-  SwImg
-){
-  return{
+function Swiper(Id, SwImg) {
+  return {
     Id,
-    SwImg
-  }
+    SwImg,
+  };
 }
 
 let SSwipe = [
-  Swiper(
-    1,
-    ImgSw
-    ),
-  Swiper(
-    2,
-    UzAvto
-    ),
-  Swiper(
-    3,
-    Hayit
-    ),
-  Swiper(
-    4,
-    Leto
-    ),
-  Swiper(
-    5,
-    Color
-    ),
-  Swiper(
+  Swiper(1, ImgSw),
+  Swiper(2, UzAvto),
+  Swiper(3, Hayit),
+  Swiper(4, Leto),
+  Swiper(5, Color),
+  Swiper(6, Uni),
+  Swiper(7, Maxi),
+  Swiper(7, Live),
+];
+
+function ModsProduct(
+  Id,
+  Name,
+  defImg,
+  Text,
+  StarT,
+  Qolgani,
+  Credit,
+  OldPrise,
+  NewPrise,
+  Img,
+  Img2,
+  Img3,
+  Img4
+) {
+  return {
+    Id,
+    Name,
+    defImg,
+    Text,
+    StarT,
+    Qolgani,
+    Credit,
+    OldPrise,
+    NewPrise,
+    Img,
+    Img2,
+    Img3,
+    Img4,
+  };
+}
+
+let ProductMods = [
+  ModsProduct(
     6,
-    Uni
-    ),
-  Swiper(
-    7,
-    Maxi
-    ),
-  Swiper(
-    7,
-    Live
-    ),
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ModsProduct(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ModsProduct(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ModsProduct(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  ModsProduct(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+];
+
+function Afish(Id, Img) {
+  return {
+    Id,
+    Img,
+  };
+}
+
+let Afis = [Afish(1, Afisha)];
+
+function KeshBack (Id,Img){
+  return{
+    Id,
+    Img
+  }
+}
+
+let Kesh =[
+  KeshBack(
+    1,
+    KeeSh
+  )
 ]
-
-
-
 
 function App() {
   return (
     <Box>
       <Nav />
-      <Search Content={Content}/>
+      <Search Content={Content} />
       <Navigation />
       <Routes>
-        <Route path="/" element={<Components Content={Content} SSwipe={SSwipe} />} />
+        <Route
+          path="/"
+          element={
+            <Components
+              Content={Content}
+              SSwipe={SSwipe}
+              ProductMods={ProductMods}
+              Afis={Afis}
+              Kesh={Kesh}
+            />
+          }
+        />
         <Route
           path="/components/:contentId"
           element={<ItemProduct Content={Content} />}
@@ -390,6 +582,7 @@ function App() {
         <Route path="/basket" element={<Basket Content={Content} />} />
         <Route path="/sorted" element={<Sorted Content={Content} />} />
       </Routes>
+      <End/>
     </Box>
   );
 }

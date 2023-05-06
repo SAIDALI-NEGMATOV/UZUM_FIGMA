@@ -14,38 +14,58 @@ export const Navigation = () => {
         display={"flex"}
         justifyContent={"flex-start"}
         alignItems={"center"}
-        mt="20px"
-        gap={"27.5px"}
+        mt="30px"
+        gap={"50px"}
         overflow={"hidden"}
+        mb={'20px'}
       >
-        <Box>
-          <Typography
-            variant="p"
-            fontWeight={"200"}
-            sx={[
-              { fontSize: "14px", transition: "all 2s linear" },
-              { "&:hover": { borderBottom: 1 } },
-            ]}
-          >
-            Elektronika
-          </Typography>
-        </Box>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "132px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "70px",color:"#242424" } },
           ]}
         >
-          Maishiy Texnika
+          Elektronika
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "210px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "100px",color:"#242424" } },
+          ]}
+        >
+          Maishiy_texnika
+        </Typography>
+        <Typography
+          variant="p"
+          fontWeight={"200"}
+          sx={[
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "322px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "35px",color:"#242424" } },
           ]}
         >
           Kiyim
@@ -54,8 +74,15 @@ export const Navigation = () => {
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "372px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "75px",color:"#242424" } },
           ]}
         >
           Poyabzallar
@@ -64,28 +91,49 @@ export const Navigation = () => {
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "460px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "80px",color:"#242424" } },
           ]}
         >
-          Aksesuarlar
+          Aksessuarlar
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "560px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "55px",color:"#242424" } },
           ]}
         >
-          Go'zallik
+          Goʻzallik
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "630px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "65px",color:"#242424" } },
           ]}
         >
           Salomatlik
@@ -94,51 +142,104 @@ export const Navigation = () => {
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "50px",
+              position: "absolute",
+              left: "715px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "145px",color:"#242424" } },
           ]}
         >
-          Uy-ro'g'or buyumlari
+            Uy_roʻzgʻor_buyumlari
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "90px",
+              position: "absolute",
+              left: "885px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "138px",color:"#242424" } },
           ]}
         >
-          Qurilish mollari
+           Qurilish_va_taʼmirlash
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "1060px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "75px",color:"#242424" } },
           ]}
         >
-          Avtotavarlar
+           Avtotovarlar
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "1170px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "100px",color:"#242424" } },
           ]}
         >
-          Bolalar tovarlari
+           Bolalar_tovarlari
         </Typography>
         <Typography
           variant="p"
           fontWeight={"200"}
           sx={[
-            { fontSize: "14px", transition: "all 2s linear" },
-            { "&:hover": { borderBottom: 1 } },
+            {
+              fontSize: "14px",
+              transition: "all 0.5s linear",
+              width: "0px",
+              position: "absolute",
+              left: "1305px",
+              color:"#797979"
+            },
+            { "&:hover": { borderBottom: 1, width: "44px",color:"#242424" } },
           ]}
         >
-          Yana <i class="bx bx-chevron-down"></i>
+           Yana
+        </Typography>
+        <Typography
+          variant="p"
+          fontWeight={"200"}
+          sx={[
+            {
+              fontSize: "20px",
+              transition: "all 1s linear",
+              width: "0px",
+              position: "absolute",
+              left: "1335px",
+              top:"117px",
+              color:"#ccc"
+            },
+            { "&:hover": { borderBottom: 1, width: "0px",color:"#242424" } },
+          ]}
+        >
+           <i class='bx bx-chevron-down'></i>
         </Typography>
       </Box>
     </Box>

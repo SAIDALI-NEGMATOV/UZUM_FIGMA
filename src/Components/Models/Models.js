@@ -1,9 +1,8 @@
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { ItemProduct } from "../ItemProduct";
 
-export const Product = ({ Content }) => {
+export const Models = ({ProductMods}) => {
   let navigate = useNavigate();
 
   let itemProduct = (item) => {
@@ -12,7 +11,6 @@ export const Product = ({ Content }) => {
   };
 
   let itemLocal = (item) => {
-
     if (localStorage.getItem("korzinaProduct")) {
       let a = JSON.parse(localStorage.getItem("korzinaProduct"));
       a.push(item);
@@ -26,15 +24,15 @@ export const Product = ({ Content }) => {
   };
 
   const itemSort = (item) => {
-    if (localStorage.getItem("SortedProduct")){
-      let a = JSON.parse(localStorage.getItem("SortedProduct"))
-      a.push(item)
-      localStorage.setItem('SortedProduct',JSON.stringify(a))
-    }else {
-      localStorage.setItem("SortedProduct",JSON.stringify([]))
-      let b = JSON.parse(localStorage.getItem('SortedProduct'))
-      b.push(item)
-      localStorage.setItem("SortedProduct",JSON.stringify(b))
+    if (localStorage.getItem("SortedProduct")) {
+      let a = JSON.parse(localStorage.getItem("SortedProduct"));
+      a.push(item);
+      localStorage.setItem("SortedProduct", JSON.stringify(a));
+    } else {
+      localStorage.setItem("SortedProduct", JSON.stringify([]));
+      let b = JSON.parse(localStorage.getItem("SortedProduct"));
+      b.push(item);
+      localStorage.setItem("SortedProduct", JSON.stringify(b));
     }
   };
 
@@ -57,7 +55,7 @@ export const Product = ({ Content }) => {
       >
         <Box width={"100%"} mb={"20px"} position={"relative"} mt="30px">
           <Typography variant="h4" fontWeight={"600"}>
-            Hayitlik{" "}
+          Modali yoz{" "}
             <i
               class="bx bx-chevron-right"
               style={{ position: "absolute", top: "6px" }}
@@ -65,7 +63,7 @@ export const Product = ({ Content }) => {
           </Typography>
         </Box>
         <Box display={"flex"} flexWrap={"wrap"} gap={"10px"}>
-          {Content.map((item, index) => (
+          {ProductMods.map((item, index) => (
             <Box
               key={index}
               display={"flex"}
@@ -74,14 +72,14 @@ export const Product = ({ Content }) => {
               flexDirection={"column"}
               bgcolor={"#fff"}
               onClick={() => itemProduct(item)}
-              zIndex={'1'}
+              zIndex={"1"}
               sx={[
-                { width: "240px", overflow: "hidden",borderRadius:"0px  " },
+                { width: "240px", overflow: "hidden", borderRadius: "0px  " },
                 {
                   "&&:hover": {
                     boxShadow: " 5px 5px 4px #d5d5d5,-5px -5px 4px #ebebeb",
                     backgroundColor: " #FFF",
-                    borderRadius:"9px"
+                    borderRadius: "9px",
                   },
                 },
               ]}
@@ -114,7 +112,7 @@ export const Product = ({ Content }) => {
                   position={"absolute"}
                   top={"20px"}
                   left={"200px"}
-                  zIndex={'100'}
+                  zIndex={"100"}
                   padding={0}
                 >
                   <i class="bx bx-heart" onClick={() => itemSort(item)}></i>
@@ -132,7 +130,7 @@ export const Product = ({ Content }) => {
                 flexWrap={"wrap"}
                 textOverflow={"hidden"}
                 overflow={"hidden"}
-                padding={'10px'}
+                padding={"10px"}
               >
                 <Typography variant="p" fontWeight={"400"} fontSize={"14px"}>
                   {item.Text}
@@ -170,7 +168,7 @@ export const Product = ({ Content }) => {
                 </Box>
                 <Box
                   borderBottom={"1px solid #ccc"}
-                  height={'8px'}
+                  height={"8px"}
                   width={"100px"}
                   mt={"10px"}
                 >
@@ -179,7 +177,7 @@ export const Product = ({ Content }) => {
                     fontWeight={"400"}
                     fontSize={"13px"}
                     ml={"2px"}
-                    sx={{mt:"-20px"}}
+                    sx={{ mt: "-20px" }}
                   >
                     {item.OldPrise} so'm
                   </Typography>
@@ -191,10 +189,10 @@ export const Product = ({ Content }) => {
                     fontSize={"16px"}
                     mr={"100px"}
                   >
-                    {item.NewPrise} so'm  
+                    {item.NewPrise} so'm
                   </Typography>
                   <Button
-                    onClick={() => itemLocal(item, index, Content)}
+                    onClick={() => itemLocal(item, index, ProductMods)}
                     sx={{
                       mb: "10px",
                       position: "absolute",
@@ -203,8 +201,7 @@ export const Product = ({ Content }) => {
                       borderRadius: "50%",
                       color: "#000",
                       padding: "10px 10px",
-                      zIndex:"100"
-            
+                      zIndex: "100",
                     }}
                   >
                     <i class="bx bx-cart"></i>
