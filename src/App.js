@@ -5,6 +5,8 @@ import { Components } from "./Components/Components";
 import { Nav } from "./Components/Nav/Nav";
 import { Search } from "./Components/Search/Search";
 import { Navigation } from "./Components/Navigation/Navigation";
+import { Elektronics } from "./Elektrpnics/Elektronics";
+
 import Oill from "./Components/Images/Oil.jpg";
 import Tide from "./Components/Images/Tide.jpg";
 import Prela from "./Components/Images/Prela.jpg";
@@ -65,8 +67,10 @@ import Uni from "./Components/Images/Uni.jpg";
 import Maxi from "./Components/Images/Maxi.jpg";
 import Live from "./Components/Images/Live.jpg";
 import Afisha from "./Components/Images/Afisha.jpg";
-import KeeSh from './Components/Images/Keshback.jpg'
+import KeeSh from "./Components/Images/Keshback.jpg";
 import { End } from "./Components/End/End";
+import GeymPad from './Components/Images/GeymPad.jpg'
+import GeymPad2 from './Components/Images/GeymPad2.jpg'
 
 // import { useEffect } from "react";
 
@@ -542,18 +546,168 @@ function Afish(Id, Img) {
 
 let Afis = [Afish(1, Afisha)];
 
-function KeshBack (Id,Img){
-  return{
+function KeshBack(Id, Img) {
+  return {
     Id,
-    Img
-  }
+    Img,
+  };
 }
 
-let Kesh =[
-  KeshBack(
-    1,
-    KeeSh
-  )
+let Kesh = [KeshBack(1, KeeSh)];
+
+function Elektronic(
+  Id,
+  Name,
+  defImg,
+  Text,
+  StarT,
+  Qolgani,
+  Credit,
+  OldPrise,
+  NewPrise,
+  Img,
+  Img2,
+  Img3,
+  Img4
+) {
+  return {
+    Id,
+    Name,
+    defImg,
+    Text,
+    StarT,
+    Qolgani,
+    Credit,
+    OldPrise,
+    NewPrise,
+    Img,
+    Img2,
+    Img3,
+    Img4,
+  };
+}
+
+let Elektro =[
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
+  Elektronic(
+    20,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2,
+  ),
 ]
 
 function App() {
@@ -581,8 +735,12 @@ function App() {
         />
         <Route path="/basket" element={<Basket Content={Content} />} />
         <Route path="/sorted" element={<Sorted Content={Content} />} />
+        <Route
+          path="/elektronics"
+          element={<Elektronics Elektro={Elektro} />}
+        />
       </Routes>
-      <End/>
+      <End />
     </Box>
   );
 }
