@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
@@ -19,6 +20,7 @@ export const Navigation = () => {
         overflow={"hidden"}
         mb={'20px'}
       >
+        <Link to={'/elektronics'}>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -36,6 +38,8 @@ export const Navigation = () => {
         >
           Elektronika
         </Typography>
+        </Link>
+        <Link to={'/texnika'}>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -53,6 +57,9 @@ export const Navigation = () => {
         >
           Maishiy_texnika
         </Typography>
+        </Link>
+        <Link to={'/clothes'}>
+
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -70,6 +77,8 @@ export const Navigation = () => {
         >
           Kiyim
         </Typography>
+        </Link>
+        <Link to={'/shoes'}>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -87,6 +96,8 @@ export const Navigation = () => {
         >
           Poyabzallar
         </Typography>
+        </Link>
+        <Link to={'/acsesuar'}>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -104,6 +115,8 @@ export const Navigation = () => {
         >
           Aksessuarlar
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -121,6 +134,8 @@ export const Navigation = () => {
         >
           Goʻzallik
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -138,6 +153,8 @@ export const Navigation = () => {
         >
           Salomatlik
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -155,6 +172,8 @@ export const Navigation = () => {
         >
             Uy_roʻzgʻor_buyumlari
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -172,6 +191,8 @@ export const Navigation = () => {
         >
            Qurilish_va_taʼmirlash
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -189,6 +210,9 @@ export const Navigation = () => {
         >
            Avtotovarlar
         </Typography>
+        </Link>
+        <Link>
+        
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -206,6 +230,8 @@ export const Navigation = () => {
         >
            Bolalar_tovarlari
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -223,6 +249,8 @@ export const Navigation = () => {
         >
            Yana
         </Typography>
+        </Link>
+        <Link>
         <Typography
           variant="p"
           fontWeight={"200"}
@@ -233,7 +261,7 @@ export const Navigation = () => {
               width: "0px",
               position: "absolute",
               left: "1335px",
-              top:"117px",
+              top:"127px",
               color:"#ccc"
             },
             { "&:hover": { borderBottom: 1, width: "0px",color:"#242424" } },
@@ -241,6 +269,7 @@ export const Navigation = () => {
         >
            <i class='bx bx-chevron-down'></i>
         </Typography>
+        </Link>
       </Box>
     </Box>
   );

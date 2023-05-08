@@ -5,6 +5,8 @@ import { Components } from "./Components/Components";
 import { Nav } from "./Components/Nav/Nav";
 import { Search } from "./Components/Search/Search";
 import { Navigation } from "./Components/Navigation/Navigation";
+import { Elektronics } from "./Elektrpnics/Elektronics";
+
 import Oill from "./Components/Images/Oil.jpg";
 import Tide from "./Components/Images/Tide.jpg";
 import Prela from "./Components/Images/Prela.jpg";
@@ -65,8 +67,21 @@ import Uni from "./Components/Images/Uni.jpg";
 import Maxi from "./Components/Images/Maxi.jpg";
 import Live from "./Components/Images/Live.jpg";
 import Afisha from "./Components/Images/Afisha.jpg";
-import KeeSh from './Components/Images/Keshback.jpg'
+import KeeSh from "./Components/Images/Keshback.jpg";
 import { End } from "./Components/End/End";
+import GeymPad from "./Components/Images/GeymPad.jpg";
+import GeymPad2 from "./Components/Images/GeymPad2.jpg";
+import { Texnika } from "./Texnika/Texnika";
+import Blender from "./Components/Images/Blender.jpg";
+import Blender2 from "./Components/Images/Blender2.jpg";
+import Man from './Components/Images/Man2.jpg'
+import Man2 from './Components/Images/Man.jpg'
+import { Clothes } from "./Clothes/Clothes";
+import { Shoes } from "./Shoes/Shoes";
+import { Acsesuar } from "./Acsesuar/Acsesuar";
+import Kali from './Components/Images/Kali.jpg'
+import Kali2 from './Components/Images/Kali2.jpg'
+
 
 // import { useEffect } from "react";
 
@@ -343,66 +358,67 @@ let Content = [
     Oill3,
     Oill4
   ),
+  
   ProductItems(
-    2,
-    "Tide",
-    Tide,
-    "Kir yuvish kukuni Tide Color, Lenor Touch, avtomat, 3 kg",
-    "4.9 (406 baho)",
-    "Oxirgisi qoldi!",
-    " 1 820 so'm/oyiga",
-    19000,
-    14000,
-    Tide,
-    Tide2,
-    Tide3,
-    Tide4
-  ),
-  ProductItems(
-    3,
-    "Prela",
-    Prela,
-    "Tagliklar Perla Twin 42 dona + Perla Kids nam salfetkalari, 15 dona sovg'a",
-    "5.0 (10 baho)",
-    "Bor-yoʻgi 2 dona qoldi",
-    "6 840 so'm/oyiga",
-    70000,
-    57000,
-    Prela,
-    Prela2,
-    Prela,
-    Salfetka
-  ),
-  ProductItems(
-    4,
-    "Xurmo",
-    Xurmo,
-    "Xurmo Date Bam, 650 g + gazlangan ichimlik Pepsi, 260 ml",
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
     "5.0 (65 baho)",
-    "Sotuvda 208 dona bor",
-    " 2 640 so'm/oyiga",
-    26000,
-    22000,
-    Xurmo,
-    Xurmo,
-    Xurmo2,
-    Xurmo3
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
   ),
-  ProductItems(
-    10,
-    "Shvabra komp",
-    Shvabra,
-    "Tozalash uchun to'plam Vileda Super Mocio Completo 1+1",
-    "5.0 (15 baho)",
-    "Sotuvda 14 dona bor",
-    "20 880  so'm/oyiga",
-    183000,
-    174000,
-    Shvabra,
-    Shvabra2,
-    Shvabra3,
-    Shvabra4
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
   ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
 ];
 
 function Swiper(Id, SwImg) {
@@ -542,18 +558,709 @@ function Afish(Id, Img) {
 
 let Afis = [Afish(1, Afisha)];
 
-function KeshBack (Id,Img){
-  return{
+function KeshBack(Id, Img) {
+  return {
     Id,
-    Img
-  }
+    Img,
+  };
 }
 
-let Kesh =[
-  KeshBack(
-    1,
-    KeeSh
-  )
+let Kesh = [KeshBack(1, KeeSh)];
+
+
+
+let Elektro = [
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+  ProductItems(
+    17,
+    "GeymPad",
+    GeymPad,
+    "O'yin konsoli Game Stick Lite 64 gb, 10 000 ta o'yin",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    379000,
+    999000,
+    GeymPad,
+    GeymPad2,
+    GeymPad,
+    GeymPad2
+  ),
+];
+
+function Texnik(
+  Id,
+  Name,
+  defImg,
+  Text,
+  StarT,
+  Qolgani,
+  Credit,
+  OldPrise,
+  NewPrise,
+  Img,
+  Img2,
+  Img3,
+  Img4
+) {
+  return {
+    Id,
+    Name,
+    defImg,
+    Text,
+    StarT,
+    Qolgani,
+    Credit,
+    OldPrise,
+    NewPrise,
+    Img,
+    Img2,
+    Img3,
+    Img4,
+  };
+}
+
+let Texnic = [
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+  Texnik(
+    18,
+    "Blender",
+    Blender,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Blender,
+    Blender2,
+    Blender,
+    Blender2
+  ),
+];
+
+function Loth(
+  Id,
+  Name,
+  defImg,
+  Text,
+  StarT,
+  Qolgani,
+  Credit,
+  OldPrise,
+  NewPrise,
+  Img,
+  Img2,
+  Img3,
+  Img4
+) {
+  return {
+    Id,
+    Name,
+    defImg,
+    Text,
+    StarT,
+    Qolgani,
+    Credit,
+    OldPrise,
+    NewPrise,
+    Img,
+    Img2,
+    Img3,
+    Img4,
+  };
+}
+
+let Kloth = [
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+  Loth(
+    19,
+    "FutBolka",
+    Man,
+    "Elektr maydalagich BOSCH BS-888 choper, 3.5 litr",
+    "5.0 (65 baho)",
+    "Bor-yoʻgi 2 dona qoldi",
+    " 44 270 so'm/oyiga",
+    205000,
+    777000,
+    Man,
+    Man2,
+    Man,
+    Man2
+  ),
+]
+
+let Shoos = [
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+  Loth(
+    6,
+    "Kross",
+    Kross,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kross,
+    Kross2,
+    Kross3,
+    Kross4
+  ),
+]
+
+let Acse =[
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
+  Loth(
+    20,
+    "Kali",
+    Kali,
+    "GRN dan ayollar krossovkalar Ayollar poyabzali oʻlchami",
+    "5.0 (65 baho)",
+    "Sotuvda 154 dona bor",
+    " 1 820 so'm/oyiga",
+    175000,
+    125000,
+    Kali,
+    Kali2,
+    Kali,
+    Kali2
+),
 ]
 
 function App() {
@@ -581,8 +1288,16 @@ function App() {
         />
         <Route path="/basket" element={<Basket Content={Content} />} />
         <Route path="/sorted" element={<Sorted Content={Content} />} />
+        <Route
+          path="/elektronics"
+          element={<Elektronics Elektro={Elektro} />}
+        />
+        <Route path="/texnika" element={<Texnika Texnic={Texnic} />} />
+        <Route path="/clothes" element={<Clothes Kloth={Kloth} />} />
+        <Route path="/shoes" element={<Shoes Shoos={Shoos} />} />
+        <Route path="/acsesuar" element={<Acsesuar Acse={Acse}/>}/>
       </Routes>
-      <End/>
+      <End />
     </Box>
   );
 }
